@@ -1,0 +1,28 @@
+p{
+	word-wrap: break-word; 
+	width: 150px;
+	background-color: yellow;
+}
+
+body {
+	background-color: yellow;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+	background-color: yellow;
+}
+
+table, th, td {
+    border: 1px solid black;
+	background-color: yellow;
+}
+
+#this-is-ID{
+	color: red;
+}
+
+.this-is-class{
+	color:purple;
+}
