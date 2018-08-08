@@ -5,13 +5,18 @@
 <body>
 <table class="centered thick-border">
 	<tr>
-		<th>Pokemon Name</th>
-		<th>Pokemon Number</th>
+		<th>Pokemon</th>
 	</tr>
 	{% for k, v in dates.items() %}
 		<tr>
-			<td background="https://img.pokemondb.net/artwork/{{k}}.jpg"><div>{{ k }}</div></td>
-			<td background="https://img.pokemondb.net/artwork/{{k}}.jpg"><div>{{ v }}</div></td>
+			<td>
+				<div class="container">
+					<img src="https://img.pokemondb.net/artwork/{{k}}.jpg" alt="Avatar" class="image" style="width:100%">
+					<div class="middle">
+							<div class="text">{{ k }}</div>
+					</div>
+				</div>
+			</td>
 		</tr>		
 	{% endfor %}
 </table>
