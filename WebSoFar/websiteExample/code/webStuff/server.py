@@ -3,6 +3,12 @@ import os
 
 app = Flask(__name__)
 
+@app.route("/testpage")
+def birthdays():
+    dates = {"bulbasaur": 1, "ivysaur": 2, "venusaur": 3, "charmander": 4, "charmeleon": 5, "charizard": 6, "squirtle": 7, "wartortle": 8, "blastoise": 9}
+    x = int(100)
+    return render_template("testpage.html", dates=dates, x=x)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	print("Someone is at the home page.")
