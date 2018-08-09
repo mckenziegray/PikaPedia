@@ -5,14 +5,14 @@ import csv
 
 def main():
 
-	f = open("PokeData.csv", "a+") 
-		
+	f = open("PokeData.csv", "a+", newline='')
+
 
 	urlTemplate = "http://pokeapi.co/api/v2/pokemon/"
 
 	ListOfPokemonInfo = []
-
-	for Pokemon in range(1,10):
+	print("Before Scrape")
+	for Pokemon in range(1,100):
 		url = urlTemplate+str(Pokemon)
     		#print(url)
 		page = requests.get(url)
@@ -31,28 +31,28 @@ def main():
 			StatsName.append(newVar['stats'][i]['stat']['name'])
 			Stats.append(newVar['stats'][i]['base_stat'])
 
-		csvwrite = csv.writer(f, delimiter = ' ')
-
+		csvwrite = csv.writer(f, delimiter = ',')
+		print(csvwrite)
 		stat_list = []
 
 		for i in range(6):
-			stat_list.append(str(StatsName[i]) + ": " + str(Stats[i]))
+			stat_list.append(str(StatsName[i])+": "+str(Stats[i]))
 
 		#print(stat_list)
 
-		test_list = []
+		#test_list = []
 
-		test_list.append(str(Pokemon) +","+ str(Name) + "," + str(BaseExperience) + "," + str(Height))	
+		#','.join(str(stat_list))
+		test_list = (str(Pokemon),str(Name),str(BaseExperience)
+		,str(Height),str(stat_list[0])
+		 ,str(stat_list[1]),str(stat_list[2])
+		  ,str(stat_list[3]),str(stat_list[4])
+		   ,str(stat_list[5]))
+		#Additions to the csv will go here
 
 
-		','.join(str(stat_list))
-
-		#print(test_list)
-
-		#print(stat_list)
-		
-
-		csvwrite.writerow(test_list + stat_list)
+		print(test_list)
+		csvwrite.writerow(test_list)
 
 		#csvwrite.writerow(stat_list)
 
@@ -65,7 +65,7 @@ def main():
    		#print(" Name:   "+str(Name))
     		#print(" BaseExperience: "+str(BaseExperience))
     		#print(" Height  : "+str(Height))
-    
+
 		#for i in range(6):
 			#f.write('%s;' % str(StatsName[i]))
 			#f.write('%s;' % str(Stats[i]))

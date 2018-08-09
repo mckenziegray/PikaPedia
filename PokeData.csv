@@ -1,356 +1,103 @@
-1;bulbasaur;64;7;speed;45;special-defense;65;special-attack;65;defense;49;attack;49;hp;45;
-2;ivysaur;142;10;speed;60;special-defense;80;special-attack;80;defense;63;attack;62;hp;60;
-3;venusaur;236;20;speed;80;special-defense;100;special-attack;100;defense;83;attack;82;hp;80;
-4;charmander;62;6;speed;65;special-defense;50;special-attack;60;defense;43;attack;52;hp;39;
-5;charmeleon;142;11;speed;80;special-defense;65;special-attack;80;defense;58;attack;64;hp;58;
-6;charizard;240;17;speed;100;special-defense;85;special-attack;109;defense;78;attack;84;hp;78;
-7;squirtle;63;5;speed;43;special-defense;64;special-attack;50;defense;65;attack;48;hp;44;
-8;wartortle;142;10;speed;58;special-defense;80;special-attack;65;defense;80;attack;63;hp;59;
-9;blastoise;239;16;speed;78;special-defense;105;special-attack;85;defense;100;attack;83;hp;79;
-10;caterpie;39;3;speed;45;special-defense;20;special-attack;20;defense;35;attack;30;hp;45;
-11;metapod;72;7;speed;30;special-defense;25;special-attack;25;defense;55;attack;20;hp;50;
-12;butterfree;178;11;speed;70;special-defense;80;special-attack;90;defense;50;attack;45;hp;60;
-13;weedle;39;3;speed;50;special-defense;20;special-attack;20;defense;30;attack;35;hp;40;
-14;kakuna;72;6;speed;35;special-defense;25;special-attack;25;defense;50;attack;25;hp;45;
-15;beedrill;178;10;speed;75;special-defense;80;special-attack;45;defense;40;attack;90;hp;65;
-16;pidgey;50;3;speed;56;special-defense;35;special-attack;35;defense;40;attack;45;hp;40;
-17;pidgeotto;122;11;speed;71;special-defense;50;special-attack;50;defense;55;attack;60;hp;63;
-18;pidgeot;216;15;speed;101;special-defense;70;special-attack;70;defense;75;attack;80;hp;83;
-19;rattata;51;3;speed;72;special-defense;35;special-attack;25;defense;35;attack;56;hp;30;
-20;raticate;145;7;speed;97;special-defense;70;special-attack;50;defense;60;attack;81;hp;55;
-21;spearow;52;3;speed;70;special-defense;31;special-attack;31;defense;30;attack;60;hp;40;
-22;fearow;155;12;speed;100;special-defense;61;special-attack;61;defense;65;attack;90;hp;65;
-23;ekans;58;20;speed;55;special-defense;54;special-attack;40;defense;44;attack;60;hp;35;
-24;arbok;157;35;speed;80;special-defense;79;special-attack;65;defense;69;attack;95;hp;60;
-25;pikachu;112;4;speed;90;special-defense;50;special-attack;50;defense;40;attack;55;hp;35;
-26;raichu;218;8;speed;110;special-defense;80;special-attack;90;defense;55;attack;90;hp;60;
-27;sandshrew;60;6;speed;40;special-defense;30;special-attack;20;defense;85;attack;75;hp;50;
-28;sandslash;158;10;speed;65;special-defense;55;special-attack;45;defense;110;attack;100;hp;75;
-29;nidoran-f;55;4;speed;41;special-defense;40;special-attack;40;defense;52;attack;47;hp;55;
-30;nidorina;128;8;speed;56;special-defense;55;special-attack;55;defense;67;attack;62;hp;70;
-31;nidoqueen;227;13;speed;76;special-defense;85;special-attack;75;defense;87;attack;92;hp;90;
-32;nidoran-m;55;5;speed;50;special-defense;40;special-attack;40;defense;40;attack;57;hp;46;
-33;nidorino;128;9;speed;65;special-defense;55;special-attack;55;defense;57;attack;72;hp;61;
-34;nidoking;227;14;speed;85;special-defense;75;special-attack;85;defense;77;attack;102;hp;81;
-35;clefairy;113;6;speed;35;special-defense;65;special-attack;60;defense;48;attack;45;hp;70;
-36;clefable;217;13;speed;60;special-defense;90;special-attack;95;defense;73;attack;70;hp;95;
-37;vulpix;60;6;speed;65;special-defense;65;special-attack;50;defense;40;attack;41;hp;38;
-38;ninetales;177;11;speed;100;special-defense;100;special-attack;81;defense;75;attack;76;hp;73;
-39;jigglypuff;95;5;speed;20;special-defense;25;special-attack;45;defense;20;attack;45;hp;115;
-40;wigglytuff;196;10;speed;45;special-defense;50;special-attack;85;defense;45;attack;70;hp;140;
-41;zubat;49;8;speed;55;special-defense;40;special-attack;30;defense;35;attack;45;hp;40;
-42;golbat;159;16;speed;90;special-defense;75;special-attack;65;defense;70;attack;80;hp;75;
-43;oddish;64;5;speed;30;special-defense;65;special-attack;75;defense;55;attack;50;hp;45;
-44;gloom;138;8;speed;40;special-defense;75;special-attack;85;defense;70;attack;65;hp;60;
-45;vileplume;221;12;speed;50;special-defense;90;special-attack;110;defense;85;attack;80;hp;75;
-46;paras;57;3;speed;25;special-defense;55;special-attack;45;defense;55;attack;70;hp;35;
-47;parasect;142;10;speed;30;special-defense;80;special-attack;60;defense;80;attack;95;hp;60;
-48;venonat;61;10;speed;45;special-defense;55;special-attack;40;defense;50;attack;55;hp;60;
-49;venomoth;158;15;speed;90;special-defense;75;special-attack;90;defense;60;attack;65;hp;70;
-50;diglett;53;2;speed;95;special-defense;45;special-attack;35;defense;25;attack;55;hp;10;
-51;dugtrio;149;7;speed;120;special-defense;70;special-attack;50;defense;50;attack;100;hp;35;
-52;meowth;58;4;speed;90;special-defense;40;special-attack;40;defense;35;attack;45;hp;40;
-53;persian;154;10;speed;115;special-defense;65;special-attack;65;defense;60;attack;70;hp;65;
-54;psyduck;64;8;speed;55;special-defense;50;special-attack;65;defense;48;attack;52;hp;50;
-55;golduck;175;17;speed;85;special-defense;80;special-attack;95;defense;78;attack;82;hp;80;
-56;mankey;61;5;speed;70;special-defense;45;special-attack;35;defense;35;attack;80;hp;40;
-57;primeape;159;10;speed;95;special-defense;70;special-attack;60;defense;60;attack;105;hp;65;
-58;growlithe;70;7;speed;60;special-defense;50;special-attack;70;defense;45;attack;70;hp;55;
-59;arcanine;194;19;speed;95;special-defense;80;special-attack;100;defense;80;attack;110;hp;90;
-60;poliwag;60;6;speed;90;special-defense;40;special-attack;40;defense;40;attack;50;hp;40;
-61;poliwhirl;135;10;speed;90;special-defense;50;special-attack;50;defense;65;attack;65;hp;65;
-62;poliwrath;230;13;speed;70;special-defense;90;special-attack;70;defense;95;attack;95;hp;90;
-63;abra;62;9;speed;90;special-defense;55;special-attack;105;defense;15;attack;20;hp;25;
-64;kadabra;140;13;speed;105;special-defense;70;special-attack;120;defense;30;attack;35;hp;40;
-65;alakazam;225;15;speed;120;special-defense;95;special-attack;135;defense;45;attack;50;hp;55;
-66;machop;61;8;speed;35;special-defense;35;special-attack;35;defense;50;attack;80;hp;70;
-67;machoke;142;15;speed;45;special-defense;60;special-attack;50;defense;70;attack;100;hp;80;
-68;machamp;227;16;speed;55;special-defense;85;special-attack;65;defense;80;attack;130;hp;90;
-69;bellsprout;60;7;speed;40;special-defense;30;special-attack;70;defense;35;attack;75;hp;50;
-70;weepinbell;137;10;speed;55;special-defense;45;special-attack;85;defense;50;attack;90;hp;65;
-71;victreebel;221;17;speed;70;special-defense;70;special-attack;100;defense;65;attack;105;hp;80;
-72;tentacool;67;9;speed;70;special-defense;100;special-attack;50;defense;35;attack;40;hp;40;
-73;tentacruel;180;16;speed;100;special-defense;120;special-attack;80;defense;65;attack;70;hp;80;
-74;geodude;60;4;speed;20;special-defense;30;special-attack;30;defense;100;attack;80;hp;40;
-75;graveler;137;10;speed;35;special-defense;45;special-attack;45;defense;115;attack;95;hp;55;
-76;golem;223;14;speed;45;special-defense;65;special-attack;55;defense;130;attack;120;hp;80;
-77;ponyta;82;10;speed;90;special-defense;65;special-attack;65;defense;55;attack;85;hp;50;
-78;rapidash;175;17;speed;105;special-defense;80;special-attack;80;defense;70;attack;100;hp;65;
-79;slowpoke;63;12;speed;15;special-defense;40;special-attack;40;defense;65;attack;65;hp;90;
-80;slowbro;172;16;speed;30;special-defense;80;special-attack;100;defense;110;attack;75;hp;95;
-81;magnemite;65;3;speed;45;special-defense;55;special-attack;95;defense;70;attack;35;hp;25;
-82;magneton;163;10;speed;70;special-defense;70;special-attack;120;defense;95;attack;60;hp;50;
-83;farfetchd;132;8;speed;60;special-defense;62;special-attack;58;defense;55;attack;90;hp;52;
-84;doduo;62;14;speed;75;special-defense;35;special-attack;35;defense;45;attack;85;hp;35;
-85;dodrio;165;18;speed;110;special-defense;60;special-attack;60;defense;70;attack;110;hp;60;
-86;seel;65;11;speed;45;special-defense;70;special-attack;45;defense;55;attack;45;hp;65;
-87;dewgong;166;17;speed;70;special-defense;95;special-attack;70;defense;80;attack;70;hp;90;
-88;grimer;65;9;speed;25;special-defense;50;special-attack;40;defense;50;attack;80;hp;80;
-89;muk;175;12;speed;50;special-defense;100;special-attack;65;defense;75;attack;105;hp;105;
-90;shellder;61;3;speed;40;special-defense;25;special-attack;45;defense;100;attack;65;hp;30;
-91;cloyster;184;15;speed;70;special-defense;45;special-attack;85;defense;180;attack;95;hp;50;
-92;gastly;62;13;speed;80;special-defense;35;special-attack;100;defense;30;attack;35;hp;30;
-93;haunter;142;16;speed;95;special-defense;55;special-attack;115;defense;45;attack;50;hp;45;
-94;gengar;225;15;speed;110;special-defense;75;special-attack;130;defense;60;attack;65;hp;60;
-95;onix;77;88;speed;70;special-defense;45;special-attack;30;defense;160;attack;45;hp;35;
-96;drowzee;66;10;speed;42;special-defense;90;special-attack;43;defense;45;attack;48;hp;60;
-97;hypno;169;16;speed;67;special-defense;115;special-attack;73;defense;70;attack;73;hp;85;
-98;krabby;65;4;speed;50;special-defense;25;special-attack;25;defense;90;attack;105;hp;30;
-99;kingler;166;13;speed;75;special-defense;50;special-attack;50;defense;115;attack;130;hp;55;
-100;voltorb;66;5;speed;100;special-defense;55;special-attack;55;defense;50;attack;30;hp;40;
-101;electrode;172;12;speed;150;special-defense;80;special-attack;80;defense;70;attack;50;hp;60;
-102;exeggcute;65;4;speed;40;special-defense;45;special-attack;60;defense;80;attack;40;hp;60;
-103;exeggutor;186;20;speed;55;special-defense;75;special-attack;125;defense;85;attack;95;hp;95;
-104;cubone;64;4;speed;35;special-defense;50;special-attack;40;defense;95;attack;50;hp;50;
-105;marowak;149;10;speed;45;special-defense;80;special-attack;50;defense;110;attack;80;hp;60;
-106;hitmonlee;159;15;speed;87;special-defense;110;special-attack;35;defense;53;attack;120;hp;50;
-107;hitmonchan;159;14;speed;76;special-defense;110;special-attack;35;defense;79;attack;105;hp;50;
-108;lickitung;77;12;speed;30;special-defense;75;special-attack;60;defense;75;attack;55;hp;90;
-109;koffing;68;6;speed;35;special-defense;45;special-attack;60;defense;95;attack;65;hp;40;
-110;weezing;172;12;speed;60;special-defense;70;special-attack;85;defense;120;attack;90;hp;65;
-111;rhyhorn;69;10;speed;25;special-defense;30;special-attack;30;defense;95;attack;85;hp;80;
-112;rhydon;170;19;speed;40;special-defense;45;special-attack;45;defense;120;attack;130;hp;105;
-113;chansey;395;11;speed;50;special-defense;105;special-attack;35;defense;5;attack;5;hp;250;
-114;tangela;87;10;speed;60;special-defense;40;special-attack;100;defense;115;attack;55;hp;65;
-115;kangaskhan;172;22;speed;90;special-defense;80;special-attack;40;defense;80;attack;95;hp;105;
-116;horsea;59;4;speed;60;special-defense;25;special-attack;70;defense;70;attack;40;hp;30;
-117;seadra;154;12;speed;85;special-defense;45;special-attack;95;defense;95;attack;65;hp;55;
-118;goldeen;64;6;speed;63;special-defense;50;special-attack;35;defense;60;attack;67;hp;45;
-119;seaking;158;13;speed;68;special-defense;80;special-attack;65;defense;65;attack;92;hp;80;
-120;staryu;68;8;speed;85;special-defense;55;special-attack;70;defense;55;attack;45;hp;30;
-121;starmie;182;11;speed;115;special-defense;85;special-attack;100;defense;85;attack;75;hp;60;
-122;mr-mime;161;13;speed;90;special-defense;120;special-attack;100;defense;65;attack;45;hp;40;
-123;scyther;100;15;speed;105;special-defense;80;special-attack;55;defense;80;attack;110;hp;70;
-124;jynx;159;14;speed;95;special-defense;95;special-attack;115;defense;35;attack;50;hp;65;
-125;electabuzz;172;11;speed;105;special-defense;85;special-attack;95;defense;57;attack;83;hp;65;
-126;magmar;173;13;speed;93;special-defense;85;special-attack;100;defense;57;attack;95;hp;65;
-127;pinsir;175;15;speed;85;special-defense;70;special-attack;55;defense;100;attack;125;hp;65;
-128;tauros;172;14;speed;110;special-defense;70;special-attack;40;defense;95;attack;100;hp;75;
-129;magikarp;40;9;speed;80;special-defense;20;special-attack;15;defense;55;attack;10;hp;20;
-130;gyarados;189;65;speed;81;special-defense;100;special-attack;60;defense;79;attack;125;hp;95;
-131;lapras;187;25;speed;60;special-defense;95;special-attack;85;defense;80;attack;85;hp;130;
-132;ditto;101;3;speed;48;special-defense;48;special-attack;48;defense;48;attack;48;hp;48;
-133;eevee;65;3;speed;55;special-defense;65;special-attack;45;defense;50;attack;55;hp;55;
-134;vaporeon;184;10;speed;65;special-defense;95;special-attack;110;defense;60;attack;65;hp;130;
-135;jolteon;184;8;speed;130;special-defense;95;special-attack;110;defense;60;attack;65;hp;65;
-136;flareon;184;9;speed;65;special-defense;110;special-attack;95;defense;60;attack;130;hp;65;
-137;porygon;79;8;speed;40;special-defense;75;special-attack;85;defense;70;attack;60;hp;65;
-138;omanyte;71;4;speed;35;special-defense;55;special-attack;90;defense;100;attack;40;hp;35;
-139;omastar;173;10;speed;55;special-defense;70;special-attack;115;defense;125;attack;60;hp;70;
-140;kabuto;71;5;speed;55;special-defense;45;special-attack;55;defense;90;attack;80;hp;30;
-141;kabutops;173;13;speed;80;special-defense;70;special-attack;65;defense;105;attack;115;hp;60;
-142;aerodactyl;180;18;speed;130;special-defense;75;special-attack;60;defense;65;attack;105;hp;80;
-143;snorlax;189;21;speed;30;special-defense;110;special-attack;65;defense;65;attack;110;hp;160;
-144;articuno;261;17;speed;85;special-defense;125;special-attack;95;defense;100;attack;85;hp;90;
-145;zapdos;261;16;speed;100;special-defense;90;special-attack;125;defense;85;attack;90;hp;90;
-146;moltres;261;20;speed;90;special-defense;85;special-attack;125;defense;90;attack;100;hp;90;
-147;dratini;60;18;speed;50;special-defense;50;special-attack;50;defense;45;attack;64;hp;41;
-148;dragonair;147;40;speed;70;special-defense;70;special-attack;70;defense;65;attack;84;hp;61;
-149;dragonite;270;22;speed;80;special-defense;100;special-attack;100;defense;95;attack;134;hp;91;
-150;mewtwo;306;20;speed;130;special-defense;90;special-attack;154;defense;90;attack;110;hp;106;
-151;mew;270;4;speed;100;special-defense;100;special-attack;100;defense;100;attack;100;hp;100;
-152;chikorita;64;9;speed;45;special-defense;65;special-attack;49;defense;65;attack;49;hp;45;
-153;bayleef;142;12;speed;60;special-defense;80;special-attack;63;defense;80;attack;62;hp;60;
-154;meganium;236;18;speed;80;special-defense;100;special-attack;83;defense;100;attack;82;hp;80;
-155;cyndaquil;62;5;speed;65;special-defense;50;special-attack;60;defense;43;attack;52;hp;39;
-156;quilava;142;9;speed;80;special-defense;65;special-attack;80;defense;58;attack;64;hp;58;
-157;typhlosion;240;17;speed;100;special-defense;85;special-attack;109;defense;78;attack;84;hp;78;
-158;totodile;63;6;speed;43;special-defense;48;special-attack;44;defense;64;attack;65;hp;50;
-159;croconaw;142;11;speed;58;special-defense;63;special-attack;59;defense;80;attack;80;hp;65;
-160;feraligatr;239;23;speed;78;special-defense;83;special-attack;79;defense;100;attack;105;hp;85;
-161;sentret;43;8;speed;20;special-defense;45;special-attack;35;defense;34;attack;46;hp;35;
-162;furret;145;18;speed;90;special-defense;55;special-attack;45;defense;64;attack;76;hp;85;
-163;hoothoot;52;7;speed;50;special-defense;56;special-attack;36;defense;30;attack;30;hp;60;
-164;noctowl;158;16;speed;70;special-defense;96;special-attack;86;defense;50;attack;50;hp;100;
-165;ledyba;53;10;speed;55;special-defense;80;special-attack;40;defense;30;attack;20;hp;40;
-166;ledian;137;14;speed;85;special-defense;110;special-attack;55;defense;50;attack;35;hp;55;
-167;spinarak;50;5;speed;30;special-defense;40;special-attack;40;defense;40;attack;60;hp;40;
-168;ariados;140;11;speed;40;special-defense;70;special-attack;60;defense;70;attack;90;hp;70;
-169;crobat;241;18;speed;130;special-defense;80;special-attack;70;defense;80;attack;90;hp;85;
-170;chinchou;66;5;speed;67;special-defense;56;special-attack;56;defense;38;attack;38;hp;75;
-171;lanturn;161;12;speed;67;special-defense;76;special-attack;76;defense;58;attack;58;hp;125;
-172;pichu;41;3;speed;60;special-defense;35;special-attack;35;defense;15;attack;40;hp;20;
-173;cleffa;44;3;speed;15;special-defense;55;special-attack;45;defense;28;attack;25;hp;50;
-174;igglybuff;42;3;speed;15;special-defense;20;special-attack;40;defense;15;attack;30;hp;90;
-175;togepi;49;3;speed;20;special-defense;65;special-attack;40;defense;65;attack;20;hp;35;
-176;togetic;142;6;speed;40;special-defense;105;special-attack;80;defense;85;attack;40;hp;55;
-177;natu;64;2;speed;70;special-defense;45;special-attack;70;defense;45;attack;50;hp;40;
-178;xatu;165;15;speed;95;special-defense;70;special-attack;95;defense;70;attack;75;hp;65;
-179;mareep;56;6;speed;35;special-defense;45;special-attack;65;defense;40;attack;40;hp;55;
-180;flaaffy;128;8;speed;45;special-defense;60;special-attack;80;defense;55;attack;55;hp;70;
-181;ampharos;230;14;speed;55;special-defense;90;special-attack;115;defense;85;attack;75;hp;90;
-182;bellossom;221;4;speed;50;special-defense;100;special-attack;90;defense;95;attack;80;hp;75;
-183;marill;88;4;speed;40;special-defense;50;special-attack;20;defense;50;attack;20;hp;70;
-184;azumarill;189;8;speed;50;special-defense;80;special-attack;60;defense;80;attack;50;hp;100;
-185;sudowoodo;144;12;speed;30;special-defense;65;special-attack;30;defense;115;attack;100;hp;70;
-186;politoed;225;11;speed;70;special-defense;100;special-attack;90;defense;75;attack;75;hp;90;
-187;hoppip;50;4;speed;50;special-defense;55;special-attack;35;defense;40;attack;35;hp;35;
-188;skiploom;119;6;speed;80;special-defense;65;special-attack;45;defense;50;attack;45;hp;55;
-189;jumpluff;207;8;speed;110;special-defense;95;special-attack;55;defense;70;attack;55;hp;75;
-190;aipom;72;8;speed;85;special-defense;55;special-attack;40;defense;55;attack;70;hp;55;
-191;sunkern;36;3;speed;30;special-defense;30;special-attack;30;defense;30;attack;30;hp;30;
-192;sunflora;149;8;speed;30;special-defense;85;special-attack;105;defense;55;attack;75;hp;75;
-193;yanma;78;12;speed;95;special-defense;45;special-attack;75;defense;45;attack;65;hp;65;
-194;wooper;42;4;speed;15;special-defense;25;special-attack;25;defense;45;attack;45;hp;55;
-195;quagsire;151;14;speed;35;special-defense;65;special-attack;65;defense;85;attack;85;hp;95;
-196;espeon;184;9;speed;110;special-defense;95;special-attack;130;defense;60;attack;65;hp;65;
-197;umbreon;184;10;speed;65;special-defense;130;special-attack;60;defense;110;attack;65;hp;95;
-198;murkrow;81;5;speed;91;special-defense;42;special-attack;85;defense;42;attack;85;hp;60;
-199;slowking;172;20;speed;30;special-defense;110;special-attack;100;defense;80;attack;75;hp;95;
-200;misdreavus;87;7;speed;85;special-defense;85;special-attack;85;defense;60;attack;60;hp;60;
-201;unown;118;5;speed;48;special-defense;48;special-attack;72;defense;48;attack;72;hp;48;
-202;wobbuffet;142;13;speed;33;special-defense;58;special-attack;33;defense;58;attack;33;hp;190;
-203;girafarig;159;15;speed;85;special-defense;65;special-attack;90;defense;65;attack;80;hp;70;
-204;pineco;58;6;speed;15;special-defense;35;special-attack;35;defense;90;attack;65;hp;50;
-205;forretress;163;12;speed;40;special-defense;60;special-attack;60;defense;140;attack;90;hp;75;
-206;dunsparce;145;15;speed;45;special-defense;65;special-attack;65;defense;70;attack;70;hp;100;
-207;gligar;86;11;speed;85;special-defense;65;special-attack;35;defense;105;attack;75;hp;65;
-208;steelix;179;92;speed;30;special-defense;65;special-attack;55;defense;200;attack;85;hp;75;
-209;snubbull;60;6;speed;30;special-defense;40;special-attack;40;defense;50;attack;80;hp;60;
-210;granbull;158;14;speed;45;special-defense;60;special-attack;60;defense;75;attack;120;hp;90;
-211;qwilfish;88;5;speed;85;special-defense;55;special-attack;55;defense;85;attack;95;hp;65;
-212;scizor;175;18;speed;65;special-defense;80;special-attack;55;defense;100;attack;130;hp;70;
-213;shuckle;177;6;speed;5;special-defense;230;special-attack;10;defense;230;attack;10;hp;20;
-214;heracross;175;15;speed;85;special-defense;95;special-attack;40;defense;75;attack;125;hp;80;
-215;sneasel;86;9;speed;115;special-defense;75;special-attack;35;defense;55;attack;95;hp;55;
-216;teddiursa;66;6;speed;40;special-defense;50;special-attack;50;defense;50;attack;80;hp;60;
-217;ursaring;175;18;speed;55;special-defense;75;special-attack;75;defense;75;attack;130;hp;90;
-218;slugma;50;7;speed;20;special-defense;40;special-attack;70;defense;40;attack;40;hp;40;
-219;magcargo;151;8;speed;30;special-defense;80;special-attack;90;defense;120;attack;50;hp;60;
-220;swinub;50;4;speed;50;special-defense;30;special-attack;30;defense;40;attack;50;hp;50;
-221;piloswine;158;11;speed;50;special-defense;60;special-attack;60;defense;80;attack;100;hp;100;
-222;corsola;144;6;speed;35;special-defense;95;special-attack;65;defense;95;attack;55;hp;65;
-223;remoraid;60;6;speed;65;special-defense;35;special-attack;65;defense;35;attack;65;hp;35;
-224;octillery;168;9;speed;45;special-defense;75;special-attack;105;defense;75;attack;105;hp;75;
-225;delibird;116;9;speed;75;special-defense;45;special-attack;65;defense;45;attack;55;hp;45;
-226;mantine;170;21;speed;70;special-defense;140;special-attack;80;defense;70;attack;40;hp;85;
-227;skarmory;163;17;speed;70;special-defense;70;special-attack;40;defense;140;attack;80;hp;65;
-228;houndour;66;6;speed;65;special-defense;50;special-attack;80;defense;30;attack;60;hp;45;
-229;houndoom;175;14;speed;95;special-defense;80;special-attack;110;defense;50;attack;90;hp;75;
-230;kingdra;243;18;speed;85;special-defense;95;special-attack;95;defense;95;attack;95;hp;75;
-231;phanpy;66;5;speed;40;special-defense;40;special-attack;40;defense;60;attack;60;hp;90;
-232;donphan;175;11;speed;50;special-defense;60;special-attack;60;defense;120;attack;120;hp;90;
-233;porygon2;180;6;speed;60;special-defense;95;special-attack;105;defense;90;attack;80;hp;85;
-234;stantler;163;14;speed;85;special-defense;65;special-attack;85;defense;62;attack;95;hp;73;
-235;smeargle;88;12;speed;75;special-defense;45;special-attack;20;defense;35;attack;20;hp;55;
-236;tyrogue;42;7;speed;35;special-defense;35;special-attack;35;defense;35;attack;35;hp;35;
-237;hitmontop;159;14;speed;70;special-defense;110;special-attack;35;defense;95;attack;95;hp;50;
-238;smoochum;61;4;speed;65;special-defense;65;special-attack;85;defense;15;attack;30;hp;45;
-239;elekid;72;6;speed;95;special-defense;55;special-attack;65;defense;37;attack;63;hp;45;
-240;magby;73;7;speed;83;special-defense;55;special-attack;70;defense;37;attack;75;hp;45;
-241;miltank;172;12;speed;100;special-defense;70;special-attack;40;defense;105;attack;80;hp;95;
-242;blissey;608;15;speed;55;special-defense;135;special-attack;75;defense;10;attack;10;hp;255;
-243;raikou;261;19;speed;115;special-defense;100;special-attack;115;defense;75;attack;85;hp;90;
-244;entei;261;21;speed;100;special-defense;75;special-attack;90;defense;85;attack;115;hp;115;
-245;suicune;261;20;speed;85;special-defense;115;special-attack;90;defense;115;attack;75;hp;100;
-246;larvitar;60;6;speed;41;special-defense;50;special-attack;45;defense;50;attack;64;hp;50;
-247;pupitar;144;12;speed;51;special-defense;70;special-attack;65;defense;70;attack;84;hp;70;
-248;tyranitar;270;20;speed;61;special-defense;100;special-attack;95;defense;110;attack;134;hp;100;
-249;lugia;306;52;speed;110;special-defense;154;special-attack;90;defense;130;attack;90;hp;106;
-250;ho-oh;306;38;speed;90;special-defense;154;special-attack;110;defense;90;attack;130;hp;106;
-251;celebi;270;6;speed;100;special-defense;100;special-attack;100;defense;100;attack;100;hp;100;
-252;treecko;62;5;speed;70;special-defense;55;special-attack;65;defense;35;attack;45;hp;40;
-253;grovyle;142;9;speed;95;special-defense;65;special-attack;85;defense;45;attack;65;hp;50;
-254;sceptile;239;17;speed;120;special-defense;85;special-attack;105;defense;65;attack;85;hp;70;
-255;torchic;62;4;speed;45;special-defense;50;special-attack;70;defense;40;attack;60;hp;45;
-256;combusken;142;9;speed;55;special-defense;60;special-attack;85;defense;60;attack;85;hp;60;
-257;blaziken;239;19;speed;80;special-defense;70;special-attack;110;defense;70;attack;120;hp;80;
-258;mudkip;62;4;speed;40;special-defense;50;special-attack;50;defense;50;attack;70;hp;50;
-259;marshtomp;142;7;speed;50;special-defense;70;special-attack;60;defense;70;attack;85;hp;70;
-260;swampert;241;15;speed;60;special-defense;90;special-attack;85;defense;90;attack;110;hp;100;
-261;poochyena;56;5;speed;35;special-defense;30;special-attack;30;defense;35;attack;55;hp;35;
-262;mightyena;147;10;speed;70;special-defense;60;special-attack;60;defense;70;attack;90;hp;70;
-263;zigzagoon;56;4;speed;60;special-defense;41;special-attack;30;defense;41;attack;30;hp;38;
-264;linoone;147;5;speed;100;special-defense;61;special-attack;50;defense;61;attack;70;hp;78;
-265;wurmple;56;3;speed;20;special-defense;30;special-attack;20;defense;35;attack;45;hp;45;
-266;silcoon;72;6;speed;15;special-defense;25;special-attack;25;defense;55;attack;35;hp;50;
-267;beautifly;178;10;speed;65;special-defense;50;special-attack;100;defense;50;attack;70;hp;60;
-268;cascoon;72;7;speed;15;special-defense;25;special-attack;25;defense;55;attack;35;hp;50;
-269;dustox;173;12;speed;65;special-defense;90;special-attack;50;defense;70;attack;50;hp;60;
-270;lotad;44;5;speed;30;special-defense;50;special-attack;40;defense;30;attack;30;hp;40;
-271;lombre;119;12;speed;50;special-defense;70;special-attack;60;defense;50;attack;50;hp;60;
-272;ludicolo;216;15;speed;70;special-defense;100;special-attack;90;defense;70;attack;70;hp;80;
-273;seedot;44;5;speed;30;special-defense;30;special-attack;30;defense;50;attack;40;hp;40;
-274;nuzleaf;119;10;speed;60;special-defense;40;special-attack;60;defense;40;attack;70;hp;70;
-275;shiftry;216;13;speed;80;special-defense;60;special-attack;90;defense;60;attack;100;hp;90;
-276;taillow;54;3;speed;85;special-defense;30;special-attack;30;defense;30;attack;55;hp;40;
-277;swellow;159;7;speed;125;special-defense;50;special-attack;75;defense;60;attack;85;hp;60;
-278;wingull;54;6;speed;85;special-defense;30;special-attack;55;defense;30;attack;30;hp;40;
-279;pelipper;154;12;speed;65;special-defense;70;special-attack;95;defense;100;attack;50;hp;60;
-280;ralts;40;4;speed;40;special-defense;35;special-attack;45;defense;25;attack;25;hp;28;
-281;kirlia;97;8;speed;50;special-defense;55;special-attack;65;defense;35;attack;35;hp;38;
-282;gardevoir;233;16;speed;80;special-defense;115;special-attack;125;defense;65;attack;65;hp;68;
-283;surskit;54;5;speed;65;special-defense;52;special-attack;50;defense;32;attack;30;hp;40;
-284;masquerain;159;8;speed;80;special-defense;82;special-attack;100;defense;62;attack;60;hp;70;
-285;shroomish;59;4;speed;35;special-defense;60;special-attack;40;defense;60;attack;40;hp;60;
-286;breloom;161;12;speed;70;special-defense;60;special-attack;60;defense;80;attack;130;hp;60;
-287;slakoth;56;8;speed;30;special-defense;35;special-attack;35;defense;60;attack;60;hp;60;
-288;vigoroth;154;14;speed;90;special-defense;55;special-attack;55;defense;80;attack;80;hp;80;
-289;slaking;252;20;speed;100;special-defense;65;special-attack;95;defense;100;attack;160;hp;150;
-290;nincada;53;5;speed;40;special-defense;30;special-attack;30;defense;90;attack;45;hp;31;
-291;ninjask;160;8;speed;160;special-defense;50;special-attack;50;defense;45;attack;90;hp;61;
-292;shedinja;83;8;speed;40;special-defense;30;special-attack;30;defense;45;attack;90;hp;1;
-293;whismur;48;6;speed;28;special-defense;23;special-attack;51;defense;23;attack;51;hp;64;
-294;loudred;126;10;speed;48;special-defense;43;special-attack;71;defense;43;attack;71;hp;84;
-295;exploud;221;15;speed;68;special-defense;73;special-attack;91;defense;63;attack;91;hp;104;
-296;makuhita;47;10;speed;25;special-defense;30;special-attack;20;defense;30;attack;60;hp;72;
-297;hariyama;166;23;speed;50;special-defense;60;special-attack;40;defense;60;attack;120;hp;144;
-298;azurill;38;2;speed;20;special-defense;40;special-attack;20;defense;40;attack;20;hp;50;
-299;nosepass;75;10;speed;30;special-defense;90;special-attack;45;defense;135;attack;45;hp;30;
-300;skitty;52;6;speed;50;special-defense;35;special-attack;35;defense;45;attack;45;hp;50;
-301;delcatty;140;11;speed;90;special-defense;55;special-attack;55;defense;65;attack;65;hp;70;
-302;sableye;133;5;speed;50;special-defense;65;special-attack;65;defense;75;attack;75;hp;50;
-303;mawile;133;6;speed;50;special-defense;55;special-attack;55;defense;85;attack;85;hp;50;
-304;aron;66;4;speed;30;special-defense;40;special-attack;40;defense;100;attack;70;hp;50;
-305;lairon;151;9;speed;40;special-defense;50;special-attack;50;defense;140;attack;90;hp;60;
-306;aggron;239;21;speed;50;special-defense;60;special-attack;60;defense;180;attack;110;hp;70;
-307;meditite;56;6;speed;60;special-defense;55;special-attack;40;defense;55;attack;40;hp;30;
-308;medicham;144;13;speed;80;special-defense;75;special-attack;60;defense;75;attack;60;hp;60;
-309;electrike;59;6;speed;65;special-defense;40;special-attack;65;defense;40;attack;45;hp;40;
-310;manectric;166;15;speed;105;special-defense;60;special-attack;105;defense;60;attack;75;hp;70;
-311;plusle;142;4;speed;95;special-defense;75;special-attack;85;defense;40;attack;50;hp;60;
-312;minun;142;4;speed;95;special-defense;85;special-attack;75;defense;50;attack;40;hp;60;
-313;volbeat;151;7;speed;85;special-defense;85;special-attack;47;defense;75;attack;73;hp;65;
-314;illumise;151;6;speed;85;special-defense;85;special-attack;73;defense;75;attack;47;hp;65;
-315;roselia;140;3;speed;65;special-defense;80;special-attack;100;defense;45;attack;60;hp;50;
-316;gulpin;60;4;speed;40;special-defense;53;special-attack;43;defense;53;attack;43;hp;70;
-317;swalot;163;17;speed;55;special-defense;83;special-attack;73;defense;83;attack;73;hp;100;
-318;carvanha;61;8;speed;65;special-defense;20;special-attack;65;defense;20;attack;90;hp;45;
-319;sharpedo;161;18;speed;95;special-defense;40;special-attack;95;defense;40;attack;120;hp;70;
-320;wailmer;80;20;speed;60;special-defense;35;special-attack;70;defense;35;attack;70;hp;130;
-321;wailord;175;145;speed;60;special-defense;45;special-attack;90;defense;45;attack;90;hp;170;
-322;numel;61;7;speed;35;special-defense;45;special-attack;65;defense;40;attack;60;hp;60;
-323;camerupt;161;19;speed;40;special-defense;75;special-attack;105;defense;70;attack;100;hp;70;
-324;torkoal;165;5;speed;20;special-defense;70;special-attack;85;defense;140;attack;85;hp;70;
-325;spoink;66;7;speed;60;special-defense;80;special-attack;70;defense;35;attack;25;hp;60;
-326;grumpig;165;9;speed;80;special-defense;110;special-attack;90;defense;65;attack;45;hp;80;
-327;spinda;126;11;speed;60;special-defense;60;special-attack;60;defense;60;attack;60;hp;60;
-328;trapinch;58;7;speed;10;special-defense;45;special-attack;45;defense;45;attack;100;hp;45;
-329;vibrava;119;11;speed;70;special-defense;50;special-attack;50;defense;50;attack;70;hp;50;
-330;flygon;234;20;speed;100;special-defense;80;special-attack;80;defense;80;attack;100;hp;80;
-331;cacnea;67;4;speed;35;special-defense;40;special-attack;85;defense;40;attack;85;hp;50;
-332;cacturne;166;13;speed;55;special-defense;60;special-attack;115;defense;60;attack;115;hp;70;
-333;swablu;62;4;speed;50;special-defense;75;special-attack;40;defense;60;attack;40;hp;45;
-334;altaria;172;11;speed;80;special-defense;105;special-attack;70;defense;90;attack;70;hp;75;
-335;zangoose;160;13;speed;90;special-defense;60;special-attack;60;defense;60;attack;115;hp;73;
-336;seviper;160;27;speed;65;special-defense;60;special-attack;100;defense;60;attack;100;hp;73;
-337;lunatone;161;10;speed;70;special-defense;85;special-attack;95;defense;65;attack;55;hp;90;
-338;solrock;161;12;speed;70;special-defense;65;special-attack;55;defense;85;attack;95;hp;90;
-339;barboach;58;4;speed;60;special-defense;41;special-attack;46;defense;43;attack;48;hp;50;
-340;whiscash;164;9;speed;60;special-defense;71;special-attack;76;defense;73;attack;78;hp;110;
-341;corphish;62;6;speed;35;special-defense;35;special-attack;50;defense;65;attack;80;hp;43;
-342;crawdaunt;164;11;speed;55;special-defense;55;special-attack;90;defense;85;attack;120;hp;63;
-343;baltoy;60;5;speed;55;special-defense;70;special-attack;40;defense;55;attack;40;hp;40;
-344;claydol;175;15;speed;75;special-defense;120;special-attack;70;defense;105;attack;70;hp;60;
-345;lileep;71;10;speed;23;special-defense;87;special-attack;61;defense;77;attack;41;hp;66;
-346;cradily;173;15;speed;43;special-defense;107;special-attack;81;defense;97;attack;81;hp;86;
-347;anorith;71;7;speed;75;special-defense;50;special-attack;40;defense;50;attack;95;hp;45;
-348;armaldo;173;15;speed;45;special-defense;80;special-attack;70;defense;100;attack;125;hp;75;
-349;feebas;40;6;speed;80;special-defense;55;special-attack;10;defense;20;attack;15;hp;20;
-350;milotic;189;62;speed;81;special-defense;125;special-attack;100;defense;79;attack;60;hp;95;
-351;castform;147;3;speed;70;special-defense;70;special-attack;70;defense;70;attack;70;hp;70;
-352;kecleon;154;10;speed;40;special-defense;120;special-attack;60;defense;70;attack;90;hp;60;
-353;shuppet;59;6;speed;45;special-defense;33;special-attack;63;defense;35;attack;75;hp;44;
-354;banette;159;11;speed;65;special-defense;63;special-attack;83;defense;65;attack;115;hp;64;
-355;duskull;59;8;speed;25;special-defense;90;special-attack;30;defense;90;attack;40;hp;20;
-356;dusclops;159;16;speed;25;special-defense;130;special-attack;60;defense;130;attack;70;hp;40;
+1,bulbasaur,64,7,speed: 45,special-defense: 65,special-attack: 65,defense: 49,attack: 49,hp: 45
+2,ivysaur,142,10,speed: 60,special-defense: 80,special-attack: 80,defense: 63,attack: 62,hp: 60
+1,bulbasaur,64,7,speed: 45,special-defense: 65,special-attack: 65,defense: 49,attack: 49,hp: 45
+2,ivysaur,142,10,speed: 60,special-defense: 80,special-attack: 80,defense: 63,attack: 62,hp: 60
+1,bulbasaur,64,7,speed: 45,special-defense: 65,special-attack: 65,defense: 49,attack: 49,hp: 45
+2,ivysaur,142,10,speed: 60,special-defense: 80,special-attack: 80,defense: 63,attack: 62,hp: 60
+3,venusaur,236,20,speed: 80,special-defense: 100,special-attack: 100,defense: 83,attack: 82,hp: 80
+4,charmander,62,6,speed: 65,special-defense: 50,special-attack: 60,defense: 43,attack: 52,hp: 39
+5,charmeleon,142,11,speed: 80,special-defense: 65,special-attack: 80,defense: 58,attack: 64,hp: 58
+6,charizard,240,17,speed: 100,special-defense: 85,special-attack: 109,defense: 78,attack: 84,hp: 78
+7,squirtle,63,5,speed: 43,special-defense: 64,special-attack: 50,defense: 65,attack: 48,hp: 44
+8,wartortle,142,10,speed: 58,special-defense: 80,special-attack: 65,defense: 80,attack: 63,hp: 59
+9,blastoise,239,16,speed: 78,special-defense: 105,special-attack: 85,defense: 100,attack: 83,hp: 79
+10,caterpie,39,3,speed: 45,special-defense: 20,special-attack: 20,defense: 35,attack: 30,hp: 45
+11,metapod,72,7,speed: 30,special-defense: 25,special-attack: 25,defense: 55,attack: 20,hp: 50
+12,butterfree,178,11,speed: 70,special-defense: 80,special-attack: 90,defense: 50,attack: 45,hp: 60
+13,weedle,39,3,speed: 50,special-defense: 20,special-attack: 20,defense: 30,attack: 35,hp: 40
+14,kakuna,72,6,speed: 35,special-defense: 25,special-attack: 25,defense: 50,attack: 25,hp: 45
+15,beedrill,178,10,speed: 75,special-defense: 80,special-attack: 45,defense: 40,attack: 90,hp: 65
+16,pidgey,50,3,speed: 56,special-defense: 35,special-attack: 35,defense: 40,attack: 45,hp: 40
+17,pidgeotto,122,11,speed: 71,special-defense: 50,special-attack: 50,defense: 55,attack: 60,hp: 63
+18,pidgeot,216,15,speed: 101,special-defense: 70,special-attack: 70,defense: 75,attack: 80,hp: 83
+19,rattata,51,3,speed: 72,special-defense: 35,special-attack: 25,defense: 35,attack: 56,hp: 30
+20,raticate,145,7,speed: 97,special-defense: 70,special-attack: 50,defense: 60,attack: 81,hp: 55
+21,spearow,52,3,speed: 70,special-defense: 31,special-attack: 31,defense: 30,attack: 60,hp: 40
+22,fearow,155,12,speed: 100,special-defense: 61,special-attack: 61,defense: 65,attack: 90,hp: 65
+23,ekans,58,20,speed: 55,special-defense: 54,special-attack: 40,defense: 44,attack: 60,hp: 35
+24,arbok,157,35,speed: 80,special-defense: 79,special-attack: 65,defense: 69,attack: 95,hp: 60
+25,pikachu,112,4,speed: 90,special-defense: 50,special-attack: 50,defense: 40,attack: 55,hp: 35
+26,raichu,218,8,speed: 110,special-defense: 80,special-attack: 90,defense: 55,attack: 90,hp: 60
+27,sandshrew,60,6,speed: 40,special-defense: 30,special-attack: 20,defense: 85,attack: 75,hp: 50
+28,sandslash,158,10,speed: 65,special-defense: 55,special-attack: 45,defense: 110,attack: 100,hp: 75
+29,nidoran-f,55,4,speed: 41,special-defense: 40,special-attack: 40,defense: 52,attack: 47,hp: 55
+30,nidorina,128,8,speed: 56,special-defense: 55,special-attack: 55,defense: 67,attack: 62,hp: 70
+31,nidoqueen,227,13,speed: 76,special-defense: 85,special-attack: 75,defense: 87,attack: 92,hp: 90
+32,nidoran-m,55,5,speed: 50,special-defense: 40,special-attack: 40,defense: 40,attack: 57,hp: 46
+33,nidorino,128,9,speed: 65,special-defense: 55,special-attack: 55,defense: 57,attack: 72,hp: 61
+34,nidoking,227,14,speed: 85,special-defense: 75,special-attack: 85,defense: 77,attack: 102,hp: 81
+35,clefairy,113,6,speed: 35,special-defense: 65,special-attack: 60,defense: 48,attack: 45,hp: 70
+36,clefable,217,13,speed: 60,special-defense: 90,special-attack: 95,defense: 73,attack: 70,hp: 95
+37,vulpix,60,6,speed: 65,special-defense: 65,special-attack: 50,defense: 40,attack: 41,hp: 38
+38,ninetales,177,11,speed: 100,special-defense: 100,special-attack: 81,defense: 75,attack: 76,hp: 73
+39,jigglypuff,95,5,speed: 20,special-defense: 25,special-attack: 45,defense: 20,attack: 45,hp: 115
+40,wigglytuff,196,10,speed: 45,special-defense: 50,special-attack: 85,defense: 45,attack: 70,hp: 140
+41,zubat,49,8,speed: 55,special-defense: 40,special-attack: 30,defense: 35,attack: 45,hp: 40
+42,golbat,159,16,speed: 90,special-defense: 75,special-attack: 65,defense: 70,attack: 80,hp: 75
+43,oddish,64,5,speed: 30,special-defense: 65,special-attack: 75,defense: 55,attack: 50,hp: 45
+44,gloom,138,8,speed: 40,special-defense: 75,special-attack: 85,defense: 70,attack: 65,hp: 60
+45,vileplume,221,12,speed: 50,special-defense: 90,special-attack: 110,defense: 85,attack: 80,hp: 75
+46,paras,57,3,speed: 25,special-defense: 55,special-attack: 45,defense: 55,attack: 70,hp: 35
+47,parasect,142,10,speed: 30,special-defense: 80,special-attack: 60,defense: 80,attack: 95,hp: 60
+48,venonat,61,10,speed: 45,special-defense: 55,special-attack: 40,defense: 50,attack: 55,hp: 60
+49,venomoth,158,15,speed: 90,special-defense: 75,special-attack: 90,defense: 60,attack: 65,hp: 70
+50,diglett,53,2,speed: 95,special-defense: 45,special-attack: 35,defense: 25,attack: 55,hp: 10
+51,dugtrio,149,7,speed: 120,special-defense: 70,special-attack: 50,defense: 50,attack: 100,hp: 35
+52,meowth,58,4,speed: 90,special-defense: 40,special-attack: 40,defense: 35,attack: 45,hp: 40
+53,persian,154,10,speed: 115,special-defense: 65,special-attack: 65,defense: 60,attack: 70,hp: 65
+54,psyduck,64,8,speed: 55,special-defense: 50,special-attack: 65,defense: 48,attack: 52,hp: 50
+55,golduck,175,17,speed: 85,special-defense: 80,special-attack: 95,defense: 78,attack: 82,hp: 80
+56,mankey,61,5,speed: 70,special-defense: 45,special-attack: 35,defense: 35,attack: 80,hp: 40
+57,primeape,159,10,speed: 95,special-defense: 70,special-attack: 60,defense: 60,attack: 105,hp: 65
+58,growlithe,70,7,speed: 60,special-defense: 50,special-attack: 70,defense: 45,attack: 70,hp: 55
+59,arcanine,194,19,speed: 95,special-defense: 80,special-attack: 100,defense: 80,attack: 110,hp: 90
+60,poliwag,60,6,speed: 90,special-defense: 40,special-attack: 40,defense: 40,attack: 50,hp: 40
+61,poliwhirl,135,10,speed: 90,special-defense: 50,special-attack: 50,defense: 65,attack: 65,hp: 65
+62,poliwrath,230,13,speed: 70,special-defense: 90,special-attack: 70,defense: 95,attack: 95,hp: 90
+63,abra,62,9,speed: 90,special-defense: 55,special-attack: 105,defense: 15,attack: 20,hp: 25
+64,kadabra,140,13,speed: 105,special-defense: 70,special-attack: 120,defense: 30,attack: 35,hp: 40
+65,alakazam,225,15,speed: 120,special-defense: 95,special-attack: 135,defense: 45,attack: 50,hp: 55
+66,machop,61,8,speed: 35,special-defense: 35,special-attack: 35,defense: 50,attack: 80,hp: 70
+67,machoke,142,15,speed: 45,special-defense: 60,special-attack: 50,defense: 70,attack: 100,hp: 80
+68,machamp,227,16,speed: 55,special-defense: 85,special-attack: 65,defense: 80,attack: 130,hp: 90
+69,bellsprout,60,7,speed: 40,special-defense: 30,special-attack: 70,defense: 35,attack: 75,hp: 50
+70,weepinbell,137,10,speed: 55,special-defense: 45,special-attack: 85,defense: 50,attack: 90,hp: 65
+71,victreebel,221,17,speed: 70,special-defense: 70,special-attack: 100,defense: 65,attack: 105,hp: 80
+72,tentacool,67,9,speed: 70,special-defense: 100,special-attack: 50,defense: 35,attack: 40,hp: 40
+73,tentacruel,180,16,speed: 100,special-defense: 120,special-attack: 80,defense: 65,attack: 70,hp: 80
+74,geodude,60,4,speed: 20,special-defense: 30,special-attack: 30,defense: 100,attack: 80,hp: 40
+75,graveler,137,10,speed: 35,special-defense: 45,special-attack: 45,defense: 115,attack: 95,hp: 55
+76,golem,223,14,speed: 45,special-defense: 65,special-attack: 55,defense: 130,attack: 120,hp: 80
+77,ponyta,82,10,speed: 90,special-defense: 65,special-attack: 65,defense: 55,attack: 85,hp: 50
+78,rapidash,175,17,speed: 105,special-defense: 80,special-attack: 80,defense: 70,attack: 100,hp: 65
+79,slowpoke,63,12,speed: 15,special-defense: 40,special-attack: 40,defense: 65,attack: 65,hp: 90
+80,slowbro,172,16,speed: 30,special-defense: 80,special-attack: 100,defense: 110,attack: 75,hp: 95
+81,magnemite,65,3,speed: 45,special-defense: 55,special-attack: 95,defense: 70,attack: 35,hp: 25
+82,magneton,163,10,speed: 70,special-defense: 70,special-attack: 120,defense: 95,attack: 60,hp: 50
+83,farfetchd,132,8,speed: 60,special-defense: 62,special-attack: 58,defense: 55,attack: 90,hp: 52
+84,doduo,62,14,speed: 75,special-defense: 35,special-attack: 35,defense: 45,attack: 85,hp: 35
+85,dodrio,165,18,speed: 110,special-defense: 60,special-attack: 60,defense: 70,attack: 110,hp: 60
+86,seel,65,11,speed: 45,special-defense: 70,special-attack: 45,defense: 55,attack: 45,hp: 65
+87,dewgong,166,17,speed: 70,special-defense: 95,special-attack: 70,defense: 80,attack: 70,hp: 90
+88,grimer,65,9,speed: 25,special-defense: 50,special-attack: 40,defense: 50,attack: 80,hp: 80
+89,muk,175,12,speed: 50,special-defense: 100,special-attack: 65,defense: 75,attack: 105,hp: 105
+90,shellder,61,3,speed: 40,special-defense: 25,special-attack: 45,defense: 100,attack: 65,hp: 30
+91,cloyster,184,15,speed: 70,special-defense: 45,special-attack: 85,defense: 180,attack: 95,hp: 50
+92,gastly,62,13,speed: 80,special-defense: 35,special-attack: 100,defense: 30,attack: 35,hp: 30
+93,haunter,142,16,speed: 95,special-defense: 55,special-attack: 115,defense: 45,attack: 50,hp: 45
+94,gengar,225,15,speed: 110,special-defense: 75,special-attack: 130,defense: 60,attack: 65,hp: 60
+95,onix,77,88,speed: 70,special-defense: 45,special-attack: 30,defense: 160,attack: 45,hp: 35
+96,drowzee,66,10,speed: 42,special-defense: 90,special-attack: 43,defense: 45,attack: 48,hp: 60
+97,hypno,169,16,speed: 67,special-defense: 115,special-attack: 73,defense: 70,attack: 73,hp: 85
+98,krabby,65,4,speed: 50,special-defense: 25,special-attack: 25,defense: 90,attack: 105,hp: 30
+99,kingler,166,13,speed: 75,special-defense: 50,special-attack: 50,defense: 115,attack: 130,hp: 55
