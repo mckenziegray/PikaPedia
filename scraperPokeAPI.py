@@ -36,14 +36,25 @@ def main():
 		stat_list = []
 
 		for i in range(6):
-			stat_list.append("," + str(StatsName[i]) + ": " + str(Stats[i]))
+			stat_list.append(str(StatsName[i]) + ": " + str(Stats[i]))
+
+		#print(stat_list)
 
 		test_list = []
 
-		test_list.append(str(Pokemon) +","+ str(Name) + "," + str(BaseExperience) + "," + str(Height))
-			
+		test_list.append(str(Pokemon) +","+ str(Name) + "," + str(BaseExperience) + "," + str(Height))	
 
-		csvwrite.writerow(test_list)
+
+		','.join(str(stat_list))
+
+		#print(test_list)
+
+		#print(stat_list)
+		
+
+		csvwrite.writerow(test_list + stat_list)
+
+		#csvwrite.writerow(stat_list)
 
 		#f.write('%s;' % str(Pokemon))
 		#f.write('%s;' % str(Name))
