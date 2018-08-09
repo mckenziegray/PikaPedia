@@ -1,16 +1,18 @@
 from lxml import html
 import requests
 import json
+import csv
 
 def main():
 
-	f = open("PokeData.csv", "a+")
+	f = open("PokeData.csv", "a+") 
+		
 
 	urlTemplate = "http://pokeapi.co/api/v2/pokemon/"
 
 	ListOfPokemonInfo = []
 
-	for Pokemon in range(1,800):
+	for Pokemon in range(1,10):
 		url = urlTemplate+str(Pokemon)
     		#print(url)
 		page = requests.get(url)
@@ -29,22 +31,36 @@ def main():
 			StatsName.append(newVar['stats'][i]['stat']['name'])
 			Stats.append(newVar['stats'][i]['base_stat'])
 
-		f.write('%s;' % str(Pokemon))
-		f.write('%s;' % str(Name))
-		f.write('%s;' % str(BaseExperience))
-		f.write('%s;' % str(Height))
+		csvwrite = csv.writer(f, delimiter = ' ')
+
+		stat_list = []
+
+		for i in range(6):
+			stat_list.append("," + str(StatsName[i]) + ": " + str(Stats[i]))
+
+		test_list = []
+
+		test_list.append(str(Pokemon) +","+ str(Name) + "," + str(BaseExperience) + "," + str(Height))
+			
+
+		csvwrite.writerow(test_list)
+
+		#f.write('%s;' % str(Pokemon))
+		#f.write('%s;' % str(Name))
+		#f.write('%s;' % str(BaseExperience))
+		#f.write('%s;' % str(Height))
 
     		#print("Pokemon #"+str(Pokemon)+": ")
    		#print(" Name:   "+str(Name))
     		#print(" BaseExperience: "+str(BaseExperience))
     		#print(" Height  : "+str(Height))
     
-		for i in range(6):
-			f.write('%s;' % str(StatsName[i]))
-			f.write('%s;' % str(Stats[i]))
+		#for i in range(6):
+			#f.write('%s;' % str(StatsName[i]))
+			#f.write('%s;' % str(Stats[i]))
         		#print(" Stat: "+str(StatsName[i])+" -----> "+str(Stats[i]))
 
-		f.write("\n")
+		#f.write("\n")
 
 	f.close()
 
