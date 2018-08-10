@@ -8,14 +8,15 @@ from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
 
 '''Searches through the index using the given search phrase and prints the search results'''
-def search(indexer, searchTerm):
+def search(indexer, search_term):
     results = None
     with indexer.searcher() as searcher:
-        query = MultifieldParser(["title", "content"], schema=indexer.schema).parse(searchTerm)
+        query = MultifieldParser(["title", "content"], schema=indexer.schema).parse(search_term)
         results = searcher.search(query)
         print("Number of results: " + str(len(results)))
         for result in results:
             print(result['title'] + ": " + result['content'][:50] + "...") # Print the first 50 characters of the each result
+        print("")
 
 '''Creates the index in the given directory'''
 def index(db_name, index_dir):
@@ -34,22 +35,24 @@ def index(db_name, index_dir):
     writer = indexer.writer()
 
     # Index each tuple in the csv file
-    with open(db_name) as csv_file:
+    with open(db_name, 'r') as csv_file:
+        csv_file = open(db_name, 'r')
         csv_reader = csv.DictReader(csv_file)
-        header = True
         for row in csv_reader:
-            if not header:
-                writer.add_document(title=row['name'], path='/' + row['id'], content=' '.join(row))
-            else:
-                header = False
+            writer.add_document(title=row['Name'], path='/' + row['Number'], content=' '.join(list(row.values())))
 
     writer.commit()
     return indexer
 
 def main():
-    searchTerm = 'bulbasaur'
-    indexer = index("Pokedata.csv", "index_dir")
-    search(indexer, searchTerm)
+    indexer = index("PokeData.csv", "index_dir")
+
+    # Makeshift temporary search interface
+    while (True):
+        search_term = input("Search: ")
+        if search_term == "quit":
+            break
+        search(indexer, search_term)
 
 if __name__ == '__main__':
     main()
