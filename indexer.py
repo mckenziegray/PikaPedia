@@ -12,11 +12,13 @@ def search(indexer, search_term):
     results = None
     with indexer.searcher() as searcher:
         query = MultifieldParser(["title", "content"], schema=indexer.schema).parse(search_term)
-        results = searcher.search(query)
-        print("Number of results: " + str(len(results)))
+        results = searcher.search(query, limit=200) # Return the top 200 results matching the query
+        print("Query matches: " + str(len(results)))
+        print("Results returned: " + str(results.scored_length()))
         for result in results:
             print(result['title'] + ": " + result['content'][:50] + "...") # Print the first 50 characters of the each result
         print("")
+        return results
 
 '''Creates the index in the given directory'''
 def index(db_name, index_dir):

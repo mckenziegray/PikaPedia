@@ -76,7 +76,7 @@ def search(indexer, search_term):
     SearchResults = ()
     with indexer.searcher() as searcher:
         query = MultifieldParser(["title", "content"], schema=indexer.schema).parse(search_term)
-        results = searcher.search(query)
+        results = searcher.search(query, limit=200) # Return the top 200 results matching the query
         print("Number of results: " + str(len(results)))
         for result in results:
             SearchResults = SearchResults + (str(result['title']),)
