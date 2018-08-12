@@ -1,0 +1,23 @@
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/testpage.css') }}">
+
+<body>
+<table class="centered thick-border">
+	<tr>
+		<th>Pokemon</th>
+	</tr>
+	{% for k, v in dates.items() %}
+		<tr>
+			<td>
+				<div class="container">
+					<img src="https://img.pokemondb.net/artwork/{{k}}.jpg" alt="Avatar" class="image" style="width:100%">
+					<div class="middle">
+							<div class="text">{{ k }}</div>
+					</div>
+				</div>
+			</td>
+		</tr>		
+	{% endfor %}
+</table>
+<body>
