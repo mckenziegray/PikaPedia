@@ -10,6 +10,9 @@ from whoosh.fields import *
 from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
 
+sys.path.append("../../../..") # Any imports below this will come from the PikaPedia directory
+from indexer import *
+
 app = Flask(__name__)
 
 @app.route("/testpage")
@@ -19,13 +22,6 @@ def birthdays():
     x = int(100)
     return render_template("testpage.html", dates=dates, x=x)
 
-''' Old homepage
-@app.route('/', methods=['GET', 'POST'])
-def index():
-	print("HomepageTriggered")
-	return render_template('ProjectHomepage.html')
-'''
-
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
     if request.method == 'POST':
@@ -33,26 +29,18 @@ def PikaPediaHomepage():
     else:
         data = request.args
 
-    print("HomepageTriggered")
-    #Works with this list
-    #
-    #  ToDo: change this into a new list of search results
-    #
-    TempSearchResults = ('bulbasaur', 'ivysaur','venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise')
-    TempSearchResults2 = ('ivysaur','venusaur', 'charmander', 'charmeleon', 'charizard', 'squirtle', 'wartortle', 'blastoise')
-    SearchTerm = "bulbasaur"
-
-
+    print("Homepage Triggered")
+	
+    indexer = index("static/Storage/PokeData.csv", "index_dir")
     query = data.get('IndexSearch')
-    TempSearchResults = mainSearch(str(query))
-    lengthList = len(TempSearchResults)
+    search_results = search(indexer, str(query))
+    print("\n\nResults: "+str(search_results))
+    lengthList = len(search_results)
 
-    print("Results: "+ str(TempSearchResults))
+    print("Results: "+ str(search_results))
     #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
-    #TempSearchResults = TempSearchResults2
 
-
-    return render_template('PikaPediaHomepage.html', TempSearchResults=TempSearchResults, lengthList=lengthList)
+    return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList)
 
 #Found at URL: http://flask.pocoo.org/snippets/40/
 @app.context_processor
@@ -67,55 +55,6 @@ def dated_url_for(endpoint, **values):
                                  endpoint, filename)
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
-
-###indexer
-#
-#
-def search(indexer, search_term):
-    results = None
-    SearchResults = ()
-    with indexer.searcher() as searcher:
-        query = MultifieldParser(["title", "content"], schema=indexer.schema).parse(search_term)
-        results = searcher.search(query, limit=200) # Return the top 200 results matching the query
-        print("Number of results: " + str(len(results)))
-        for result in results:
-            SearchResults = SearchResults + (str(result['title']),)
-    return SearchResults
-
-'''Creates the index in the given directory'''
-def index(db_name, index_dir):
-
-    # This is the schema that will be followed by the documents in our index
-    # We may or may not want to add some fields
-    schema = Schema(title=TEXT(stored=True), path=ID(stored=True), content=TEXT(stored=True))
-        # Make sure the directory where we will be putting the index exists
-    if not os.path.exists(index_dir):
-        os.mkdir(index_dir)
-        # Create the index inside of the directory
-    indexer = create_in(index_dir, schema)
-        # The writer is used to add documents to the index
-    writer = indexer.writer()
-        # Index each tuple in the csv file
-    with open(db_name, 'r') as csv_file:
-        csv_file = open(db_name, 'r')
-        csv_reader = csv.DictReader(csv_file)
-        for row in csv_reader:
-            writer.add_document(title=row['Name'], path='/' + row['Number'], content=' '.join(list(row.values())))
-        writer.commit()
-    return indexer
-
-def mainSearch(SearchTerm):
-    indexer = index("static/Storage/PokeData.csv", "index_dir")
-        # Makeshift temporary search interface
-    #while (True):
-        #search_term = input("Search: ")
-    search_term = SearchTerm
-    #if search_term == "quit":
-    #    break
-    SearchTerm = search(indexer, search_term)
-    print("\n\nResults: "+str(SearchTerm))
-
-    return SearchTerm
 
 if __name__ == '__main__':
 	app.run(debug=True)
