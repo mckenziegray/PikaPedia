@@ -31,7 +31,7 @@ def PikaPediaHomepage():
 
     print("Homepage Triggered")
 	
-    indexer = index("static/Storage/PokeData.csv", "index_dir")
+    indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
     search_results = search(indexer, str(query))
     print("\n\nResults: "+str(search_results))
