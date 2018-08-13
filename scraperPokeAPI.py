@@ -10,7 +10,7 @@ evolutions_base_url = "http://pokeapi.co/api/v2/evolution-chain/"
 def scrape_pokemon(file_name, start_id, end_id):
 	with open(file_name, "w", newline='') as f: # 'with' provides free exception handling and closes the file automatically
 		csvwriter = csv.writer(f, delimiter = ',')
-		csvwriter.writerow(('Number','Name','Base Experience','Height', 'Weight', 'Type 1','Type 2','Ability 1','Ability 2','Ability 3','Speed','Special Defense','Special Attack','Defense','Attack','HP'))
+		csvwriter.writerow(('Number','Name','Base Experience','Height', 'Weight', 'Type 1','Type 2','Ability 1','Ability 2','Ability 3','Speed','Special Defense','Special Attack','Defense','Attack','HP', 'Moves'))
 
 		# print("Before Scrape")
 		for pokemon_id in range(start_id, end_id+1):
