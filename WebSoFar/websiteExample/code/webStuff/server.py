@@ -5,6 +5,7 @@ import sys
 import whoosh
 import os
 import csv
+import json
 from whoosh.index import create_in
 from whoosh.fields import *
 from whoosh.qparser import QueryParser
@@ -22,6 +23,35 @@ def birthdays():
     x = int(100)
     return render_template("testpage.html", dates=dates, x=x)
 
+
+@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemon', 'pokemonInfo'])
+def SinglePokemonLoadPage():
+    if request.method == 'POST':
+        data = request.form
+    else:
+        data = request.args
+
+    print("Single Page Triggered")
+    pokemon = data.get('post')
+    info = data.get('pokemonInfo')
+    lengthInfo = len(info)
+
+    info = json.loads(info.replace("'", '"'))
+
+    for (k,v) in info.items():
+        print(v)
+    #indexer = index("static/Storage/PokeData.csv", "index_dir")
+    #query = data.get('IndexSearch')
+    #search_results = search(indexer, str(query))
+    #print("\n\nResults: "+str(search_results))
+    #lengthList = len(search_results)
+
+    #print("Results: "+ str(search_results))
+    #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
+
+    return render_template('SinglePokemonLoadPage.html', pokemon=pokemon, info=info, lengthInfo=lengthInfo)
+
+
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
     if request.method == 'POST':
@@ -30,15 +60,21 @@ def PikaPediaHomepage():
         data = request.args
 
     print("Homepage Triggered")
-	
     indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
+    
+    #pokemon = data.get('onclick')
+
     search_results = search(indexer, str(query))
     print("\n\nResults: "+str(search_results))
     lengthList = len(search_results)
 
+    pokemon = 'hi'
+    #add buton for SinglePokemonLoadPage
     print("Results: "+ str(search_results))
     #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
+
+    print("\n\nPokemon: "+str(pokemon))
 
     return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList)
 

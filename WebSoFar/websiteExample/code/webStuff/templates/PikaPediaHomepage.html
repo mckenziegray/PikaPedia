@@ -5,6 +5,8 @@
 <body>
 <table class="centered thick-border">
 
+
+
 	<form action="{{ url_for('PikaPediaHomepage') }}" method="post">
 	    <input type="text" name="IndexSearch">
 	    <input type="submit">
@@ -18,7 +20,10 @@
 				<div class="container">
 					<img src="https://img.pokemondb.net/artwork/{{search_results[num]['name']}}.jpg" alt="Avatar" class="image" style="width:100%">
 					<div class="middle">
-							<div class="text">{{search_results[num]}}</div>
+							<form method="get" action="{{ url_for('SinglePokemonLoadPage') }}">
+								<input type="submit" name="post" value="{{search_results[num]['name']}}" />
+								<input type="hidden" name="pokemonInfo" value="{{search_results[num]}}"/>
+							</form>
 					</div>
 				</div>
 			</td>

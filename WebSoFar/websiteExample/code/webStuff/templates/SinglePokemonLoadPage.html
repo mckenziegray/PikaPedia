@@ -1,0 +1,29 @@
+<!doctype html>
+<style>
+</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/singlepage.css') }}">
+
+<body>
+<table class="centered thick-border">
+
+	<form action="{{ url_for('PikaPediaHomepage') }}" method="post">
+	    <input type="text" name="IndexSearch">
+	    <input type="submit">
+	</form>
+		<div class="card" class"centered"  style="background-color: yellow" id="rcorners1">
+			<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar">
+			<div class="container" style="background-color: yellow;" id="rcorners2">
+				<h4><b>{{pokemon}}</b></h4>
+					{% for k,v in info.items():%}
+						<div class="card" style="background-color: red;" id="rcorners3">
+							{{k}}
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{v}}
+							</p>
+						</div>
+					{% endfor %}
+			</div>
+		</div>
+
+</table>
+<body>
