@@ -25,9 +25,8 @@ def scrape_pokemon(file_name, start_id, end_id):
 			BaseExperience = json_data['base_experience']     #returns experience gained for defeating this
 			Height = json_data['height']
 			Weight = json_data['weight']
-			#Ability = json_data['abilities'][3]['name']
 
-			test_list = (str(Pokemon),str(Name),str(BaseExperience),str(Height),str(Weight),)
+			test_list = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),)
 
 			for num in range(len(json_data['abilities'])):
 				Abilities.append(str(json_data['abilities'][num]['ability']['name']))

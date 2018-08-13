@@ -21,6 +21,7 @@ def search(indexer, search_term):
                 "ability_1",
                 "ability_2",
                 "ability_hidden",
+                "moves",
                 "first_form",
                 "second_forms",
                 "third_forms"
@@ -53,7 +54,8 @@ def index(pokemon_db, evolutions_db, index_dir):
         ability_1=TEXT(stored=True),
         ability_2=TEXT(stored=True),
         ability_hidden=TEXT(stored=True),
-        speed=STORED(), # Stored means it won't be indexed and can't be searched for, but is still accessible
+        moves=TEXT(stored=True),
+        speed=STORED(), # STORED() means it won't be indexed and can't be searched for, but is still accessible
         sp_def=STORED(),
         sp_atk=STORED(),
         defense=STORED(),
@@ -61,6 +63,7 @@ def index(pokemon_db, evolutions_db, index_dir):
         hp=STORED(),
         exp=STORED(),
         height=STORED(),
+        weight=STORED(),
         first_form=TEXT(stored=True),
         second_forms=TEXT(stored=True),
         third_forms=TEXT(stored=True),
@@ -111,6 +114,7 @@ def index(pokemon_db, evolutions_db, index_dir):
                 hp=row["HP"],
                 exp=row["Base Experience"],
                 height=row["Height"],
+                weight=row["Weight"],
                 first_form=evolution_line[0],
                 second_forms=evolution_line[1],
                 third_forms=evolution_line[2]
