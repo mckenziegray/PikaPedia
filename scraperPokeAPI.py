@@ -9,7 +9,7 @@ def main():
 
 	with open("PokeData.csv", "w") as f: # 'with' provides free exception handling and closes the file automatically
 		csvwriter = csv.writer(f, delimiter = ',')
-		csvwriter.writerow(('Number','Name','Base Experience','Height','Type 1','Type 2','Ability 1','Ability 2','Ability 3','Speed','Special Defense','Special Attack','Defense','Attack','HP'))
+		csvwriter.writerow(('Number','Name','Base Experience','Height', 'Weight', 'Type 1','Type 2','Ability 1','Ability 2','Ability 3','Speed','Special Defense','Special Attack','Defense','Attack','HP'))
 
 		# print("Before Scrape")
 		for Pokemon in range(1, NUM_POKEMON_TO_SCRAPE):
@@ -19,12 +19,14 @@ def main():
 			Stats = []    #this will record stats
 			Types = [] 	#this will record Types
 			Abilities = []	#this will record abilities
+			Moves = [] #records the pokemon's moves
 			Name = json_data['name'] #this will return name
 			BaseExperience = json_data['base_experience']     #returns experience gained for defeating this
 			Height = json_data['height']
+			Weight = json_data['weight']
 			#Ability = json_data['abilities'][3]['name']
 
-			test_list = (str(Pokemon),str(Name),str(BaseExperience),str(Height),)
+			test_list = (str(Pokemon),str(Name),str(BaseExperience),str(Height),str(Weight),)
 
 			for num in range(len(json_data['abilities'])):
 				Abilities.append(str(json_data['abilities'][num]['ability']['name']))
@@ -34,6 +36,9 @@ def main():
 
 			for i in range(6):
 				Stats.append(json_data['stats'][i]['base_stat'])
+			
+			for x in range(len(json_data['moves'])):
+				Moves.append(str(json_data['moves'][x]['move']['name']))
 
 			#Types to added to test_list here. I used 2 because this is most possible
 			for num in range(len(Types)):
@@ -53,6 +58,8 @@ def main():
 			for i in range(6):
 				stat_list.append(str(Stats[i]))
 				test_list = test_list + (str(stat_list[i]),)
+
+			test_list += (str(Moves),)
 
 			print(test_list)
 			csvwriter.writerow(test_list)
