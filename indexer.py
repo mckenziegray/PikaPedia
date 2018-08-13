@@ -21,7 +21,9 @@ def search(indexer, search_term):
                 "ability_1",
                 "ability_2",
                 "ability_hidden",
-                "evolution_line"
+                "first_form",
+                "second_forms",
+                "third_forms"
             ],
             schema=indexer.schema, 
             group=qparser.OrGroup
@@ -84,14 +86,13 @@ def index(pokemon_db, evolutions_db, index_dir):
                 evolutions_csv_reader = csv.DictReader(evolutions_csv)
                 for evolution_chain in evolutions_csv_reader:
                     if row['Name'] == evolution_chain['First Form'] or row['Name'] in evolution_chain['Second Forms'] or row['Name'] in evolution_chain['Third Forms']:
-                        evolution_line =
-                            [
-                                evolution_chain['First Form'], 
-                                evolution_chain['Second Forms'].strip("[']").replace(',', ' '), 
-                                evolution_chain['Third Forms'].strip("[']").replace(',', ' ')
-                            ]
-                        )
+                        evolution_line[0] = evolution_chain['First Form']
+                        evolution_line[1] = evolution_chain['Second Forms'].strip("[']").replace(',', ' ')
+                        evolution_line[2] = evolution_chain['Third Forms'].strip("[']").replace(',', ' ')
                         break
+
+            if row['Name'] == "glaceon" or row['Name'] == "leafeon":
+                pass
 
             # Index the Pokemon's data
             writer.add_document(
