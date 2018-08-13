@@ -21,6 +21,7 @@ def search(indexer, search_term):
                 "ability_1",
                 "ability_2",
                 "ability_hidden",
+                "evolution_line"
             ],
             schema=indexer.schema, 
             group=qparser.OrGroup
@@ -40,7 +41,7 @@ def search(indexer, search_term):
     return results_list
 
 '''Creates the index in the given directory'''
-def index(db_name, index_dir):
+def index(pokemon_db, evolutions_db, index_dir):
     # This is the schema that will be followed by the documents in our index
     schema = Schema(
         name=TEXT(stored=True), 
@@ -57,7 +58,10 @@ def index(db_name, index_dir):
         attack=STORED(),
         hp=STORED(),
         exp=STORED(),
-        height=STORED()
+        height=STORED(),
+        first_form=TEXT(stored=True),
+        second_forms=TEXT(stored=True),
+        third_forms=TEXT(stored=True),
     )
 
     # Make sure the directory where we will be putting the index exists
@@ -71,10 +75,25 @@ def index(db_name, index_dir):
     writer = indexer.writer()
 
     # Index each tuple in the csv file
-    with open(db_name, 'r') as csv_file:
-        csv_file = open(db_name, 'r')
-        csv_reader = csv.DictReader(csv_file)
-        for row in csv_reader:
+    with open(pokemon_db, 'r') as pokemon_csv:
+        pokemon_csv_reader = csv.DictReader(pokemon_csv)
+        for row in pokemon_csv_reader:
+            evolution_line = ["", "", ""]
+            # Find the Pokemon's evolution line
+            with open(evolutions_db, 'r') as evolutions_csv:
+                evolutions_csv_reader = csv.DictReader(evolutions_csv)
+                for evolution_chain in evolutions_csv_reader:
+                    if row['Name'] == evolution_chain['First Form'] or row['Name'] in evolution_chain['Second Forms'] or row['Name'] in evolution_chain['Third Forms']:
+                        evolution_line =
+                            [
+                                evolution_chain['First Form'], 
+                                evolution_chain['Second Forms'].strip("[']").replace(',', ' '), 
+                                evolution_chain['Third Forms'].strip("[']").replace(',', ' ')
+                            ]
+                        )
+                        break
+
+            # Index the Pokemon's data
             writer.add_document(
                 name=row['Name'], 
                 id=row['Number'], 
@@ -90,14 +109,17 @@ def index(db_name, index_dir):
                 attack=row["Attack"],
                 hp=row["HP"],
                 exp=row["Base Experience"],
-                height=row["Height"]
+                height=row["Height"],
+                first_form=evolution_line[0],
+                second_forms=evolution_line[1],
+                third_forms=evolution_line[2]
             )
 
     writer.commit()
     return indexer
 
 def main():
-    indexer = index("PokeData.csv", "index_dir")
+    indexer = index("PokeData.csv", "EvolutionChains.csv", "index_dir")
 
     # Makeshift search interface for testing
     while (True):
