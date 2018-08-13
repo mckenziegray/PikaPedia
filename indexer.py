@@ -21,6 +21,10 @@ def search(indexer, search_term):
                 "ability_1",
                 "ability_2",
                 "ability_hidden",
+                "moves",
+                "first_form",
+                "second_forms",
+                "third_forms"
             ],
             schema=indexer.schema, 
             group=qparser.OrGroup
@@ -40,7 +44,7 @@ def search(indexer, search_term):
     return results_list
 
 '''Creates the index in the given directory'''
-def index(db_name, index_dir):
+def index(pokemon_db, evolutions_db, index_dir):
     # This is the schema that will be followed by the documents in our index
     schema = Schema(
         name=TEXT(stored=True), 
@@ -50,14 +54,19 @@ def index(db_name, index_dir):
         ability_1=TEXT(stored=True),
         ability_2=TEXT(stored=True),
         ability_hidden=TEXT(stored=True),
-        speed=STORED(), # Stored means it won't be indexed and can't be searched for, but is still accessible
+        moves=TEXT(stored=True),
+        speed=STORED(), # STORED() means it won't be indexed and can't be searched for, but is still accessible
         sp_def=STORED(),
         sp_atk=STORED(),
         defense=STORED(),
         attack=STORED(),
         hp=STORED(),
         exp=STORED(),
-        height=STORED()
+        height=STORED(),
+        weight=STORED(),
+        first_form=TEXT(stored=True),
+        second_forms=TEXT(stored=True),
+        third_forms=TEXT(stored=True),
     )
 
     # Make sure the directory where we will be putting the index exists
@@ -71,10 +80,24 @@ def index(db_name, index_dir):
     writer = indexer.writer()
 
     # Index each tuple in the csv file
-    with open(db_name, 'r') as csv_file:
-        csv_file = open(db_name, 'r')
-        csv_reader = csv.DictReader(csv_file)
-        for row in csv_reader:
+    with open(pokemon_db, 'r') as pokemon_csv:
+        pokemon_csv_reader = csv.DictReader(pokemon_csv)
+        for row in pokemon_csv_reader:
+            evolution_line = ["", "", ""]
+            # Find the Pokemon's evolution line
+            with open(evolutions_db, 'r') as evolutions_csv:
+                evolutions_csv_reader = csv.DictReader(evolutions_csv)
+                for evolution_chain in evolutions_csv_reader:
+                    if row['Name'] == evolution_chain['First Form'] or row['Name'] in evolution_chain['Second Forms'] or row['Name'] in evolution_chain['Third Forms']:
+                        evolution_line[0] = evolution_chain['First Form']
+                        evolution_line[1] = evolution_chain['Second Forms'].strip("[']").replace(',', ' ')
+                        evolution_line[2] = evolution_chain['Third Forms'].strip("[']").replace(',', ' ')
+                        break
+
+            if row['Name'] == "glaceon" or row['Name'] == "leafeon":
+                pass
+
+            # Index the Pokemon's data
             writer.add_document(
                 name=row['Name'], 
                 id=row['Number'], 
@@ -83,6 +106,7 @@ def index(db_name, index_dir):
                 ability_1=row["Ability 1"],
                 ability_2=row["Ability 2"],
                 ability_hidden=row["Ability 2"],
+                moves=row["Moves"].strip("[']").replace(',', ' '),
                 speed=row["Speed"],
                 sp_def=row["Special Defense"],
                 sp_atk=row["Special Attack"],
@@ -90,14 +114,18 @@ def index(db_name, index_dir):
                 attack=row["Attack"],
                 hp=row["HP"],
                 exp=row["Base Experience"],
-                height=row["Height"]
+                height=row["Height"],
+                weight=row["Weight"],
+                first_form=evolution_line[0],
+                second_forms=evolution_line[1],
+                third_forms=evolution_line[2]
             )
 
     writer.commit()
     return indexer
 
 def main():
-    indexer = index("PokeData.csv", "index_dir")
+    indexer = index("PokeData.csv", "EvolutionChains.csv", "index_dir")
 
     # Makeshift search interface for testing
     while (True):
