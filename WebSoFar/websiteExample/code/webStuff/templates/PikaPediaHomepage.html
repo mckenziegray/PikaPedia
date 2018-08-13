@@ -19,12 +19,21 @@
 			<td>
 				<div class="container">
 					<img src="https://img.pokemondb.net/artwork/{{search_results[num]['name']}}.jpg" alt="Avatar" class="image" style="width:100%">
-					<div class="middle">
-							<form method="get" action="{{ url_for('SinglePokemonLoadPage') }}">
-								<input type="submit" name="post" value="{{search_results[num]['name']}}" />
-								<input type="hidden" name="pokemonInfo" value="{{search_results[num]}}"/>
-							</form>
-					</div>
+					<form method="get" action="{{ url_for('SinglePokemonLoadPage') }}">
+						<input class="middle"  value="{{search_results[num]['name']}}" method="get" type="submit">
+								<input type="hidden" name="post" value="{{search_results[num]['name']}}">
+								<input type="hidden" name="name" value="{{search_results[num]['name']}}"/>
+								<input type="hidden" name="id" value="{{search_results[num]['id']}}"/>
+								<input type="hidden" name="type_1" value="{{search_results[num]['type_1']}}"/>
+								<input type="hidden" name="type_2" value="{{search_results[num]['type_2']}}"/>
+								<input type="hidden" name="ability_1" value="{{search_results[num]['ability_1']}}"/>
+								<input type="hidden" name="ability_2" value="{{search_results[num]['ability_2']}}"/>
+								<input type="hidden" name="moves" value="{{search_results[num]['moves']}}"/>
+								<input type="hidden" name="first_form" value="{{search_results[num]['first_form']}}"/>
+								<input type="hidden" name="second_forms" value="{{search_results[num]['second_forms']}}"/>
+								<input type="hidden" name="third_forms" value="{{search_results[num]['third_forms']}}"/>
+						</input>
+					</form>
 				</div>
 			</td>
 		</tr>
