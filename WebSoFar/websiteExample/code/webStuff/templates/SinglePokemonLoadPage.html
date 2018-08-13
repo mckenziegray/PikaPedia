@@ -11,17 +11,50 @@
 	    <input type="submit">
 	</form>
 		<div class="card" class"centered"  style="background-color: yellow" id="rcorners1">
-			<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar">
+			<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="Avatar">
 			<div class="container" style="background-color: yellow;" id="rcorners2">
-				<h4><b>{{pokemon}}</b></h4>
-					{% for k,v in info.items():%}
 						<div class="card" style="background-color: red;" id="rcorners3">
-							{{k}}
+							Id
 							<p class="card" style="background-color: white;" id="rcorners3">
-								{{v}}
+				       	{{id}}
 							</p>
 						</div>
-					{% endfor %}
+						<div class="card" style="background-color: red;" id="rcorners3">
+							Name
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{name}}
+							</p>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							Ability 1
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{ability_1}}
+							</p>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							Ability 2
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{ability_2}}
+							</p>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							First Evolution
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{first_form}}
+							</p>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							Second Evolution
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{second_forms}}
+							</p>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							Third Evolution
+							<p class="card" style="background-color: white;" id="rcorners3">
+								{{third_forms}}
+							</p>
+						</div>
 			</div>
 		</div>
 

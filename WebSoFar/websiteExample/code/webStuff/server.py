@@ -24,7 +24,7 @@ def birthdays():
     return render_template("testpage.html", dates=dates, x=x)
 
 
-@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemon', 'pokemonInfo'])
+@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'name', 'id', 'type_1', 'type_2', 'ability_1', 'ability_2', 'moves', 'first_form', 'second_forms', 'third_forms'])
 def SinglePokemonLoadPage():
     if request.method == 'POST':
         data = request.form
@@ -33,23 +33,35 @@ def SinglePokemonLoadPage():
 
     print("Single Page Triggered")
     pokemon = data.get('post')
-    info = data.get('pokemonInfo')
-    lengthInfo = len(info)
+    #info = data.get('pokemonInfo')
+    #lengthInfo = len(info)
 
-    info = json.loads(info.replace("'", '"'))
+    #info = json.loads(info.replace("'", '"'))
 
-    for (k,v) in info.items():
-        print(v)
-    #indexer = index("static/Storage/PokeData.csv", "index_dir")
-    #query = data.get('IndexSearch')
-    #search_results = search(indexer, str(query))
-    #print("\n\nResults: "+str(search_results))
-    #lengthList = len(search_results)
+    name = data.get('name')
+    id = data.get('id')
+    type_1 = data.get('type_2')
+    type_2 = data.get('type_1')
+    ability_1 = data.get('ability_1')
+    ability_2 = data.get('ability_2')
+    moves = data.get('moves')
+    first_form = data.get('first_form')
+    second_forms = data.get('second_forms')
+    third_forms = data.get('third_forms')
 
     #print("Results: "+ str(search_results))
     #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
 
-    return render_template('SinglePokemonLoadPage.html', pokemon=pokemon, info=info, lengthInfo=lengthInfo)
+    return render_template('SinglePokemonLoadPage.html',
+    #Variables for web page
+        name=name,
+        id=id,
+        ability_1=ability_1,
+        ability_2=ability_2,
+        moves=moves,
+        first_form=first_form,
+        second_forms=second_forms,
+        third_forms=third_forms)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -62,7 +74,7 @@ def PikaPediaHomepage():
     print("Homepage Triggered")
     indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
-    
+
     #pokemon = data.get('onclick')
 
     search_results = search(indexer, str(query))
