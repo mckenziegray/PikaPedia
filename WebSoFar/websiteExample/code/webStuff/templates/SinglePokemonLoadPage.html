@@ -29,9 +29,9 @@
 						Moves
 						<div>
 
-						{% for moveIndex in range(lenMoveList) %}
+						{% for move in moveList %}
 							<p class="movesList" style="background-color: white;" id="rcorners4">
-									{{moveList[moveIndex]}}
+									{{move}}
 							</p>
 						{% endfor %}
 
@@ -68,15 +68,19 @@
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Second Evolution
-							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								{{second_forms}}
-							</div>
+							{% for pokemon in second_forms %}
+								<div class="cardValue" style="background-color: white;" id="rcorners4">
+									{{pokemon}}
+								</div>
+							{% endfor %}
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Third Evolution
-							<div class="card" style="background-color: white;" id="rcorners3">
-								{{third_forms}}
-							</div>
+							{% for pokemon in third_forms %}
+								<div class="cardValue" style="background-color: white;" id="rcorners4">
+									{{pokemon}}
+								</div>
+							{% endfor %}
 						</div>
 				</div>
 			</div>

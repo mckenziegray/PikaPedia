@@ -24,7 +24,7 @@ def birthdays():
     return render_template("testpage.html", dates=dates, x=x)
 
 
-@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'name', 'id', 'type_1', 'type_2', 'ability_1', 'ability_2', 'moves', 'first_form', 'second_forms', 'third_forms'])
+@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemonInfo'])
 def SinglePokemonLoadPage():
     if request.method == 'POST':
         data = request.form
@@ -32,35 +32,25 @@ def SinglePokemonLoadPage():
         data = request.args
 
     print("Single Page Triggered")
-    pokemon = data.get('post')
-    #info = data.get('pokemonInfo')
-    #lengthInfo = len(info)
+    
+    info = data.get('pokemonInfo')
 
-    #info = json.loads(info.replace("'", '"'))
+    print(info.replace("'", '"'))
+    lengthInfo = len(info)
 
-    name = data.get('name')
-    id = data.get('id')
+    info = json.loads(info.replace("'", '"'))
+
+    name = info['name']
+    id = info['id']
     idInt = int(id)
-    type_1 = data.get('type_2')
-    type_2 = data.get('type_1')
-    ability_1 = data.get('ability_1')
-    ability_2 = data.get('ability_2')
-    moves = data.get('moves')
-    first_form = data.get('first_form')
-    second_forms = data.get('second_forms')
-    third_forms = data.get('third_forms')
-
-    #for TMmoves in moves:
-    moves = moves.split('\'')
-    #moves.remove(' ')
-    moveList = []
-    for moveSpot in range(0,len(moves),2):
-        moveList.append(str(moves[moveSpot]))
-        print("->"+str(moves[moveSpot])+"<-")
-
-    lenMoveList = len(moveList)
-    #print("Results: "+ str(search_results))
-    #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
+    type_1 = info['type_2']
+    type_2 = info['type_1']
+    ability_1 = info['ability_1']
+    ability_2 = info['ability_2']
+    moves = info['moves']
+    first_form = info['first_form']
+    second_forms = info['second_forms']
+    third_forms = info['third_forms']
 
     return render_template('SinglePokemonLoadPage.html',
     #Variables for web page
@@ -73,9 +63,7 @@ def SinglePokemonLoadPage():
         second_forms=second_forms,
         third_forms=third_forms,
         idInt=idInt,    #used for Counter in HTML
-        lenMoveList=lenMoveList,
-        moveList=moveList) #Holds Moves List
-
+        moveList=moves) #Holds Moves List
 
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
@@ -88,21 +76,8 @@ def PikaPediaHomepage():
     indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
 
-    #pokemon = data.get('onclick')
-
     search_results = search(indexer, str(query))
-    #print("\n\nResults: "+str(search_results))
-
     lengthList = len(search_results)
-
-
-
-    pokemon = 'hi'
-    #add buton for SinglePokemonLoadPage
-    #print("Results: "+ str(search_results))
-    #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
-
-    #print("\n\nPokemon: "+str(pokemon))
 
     return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList)
 
