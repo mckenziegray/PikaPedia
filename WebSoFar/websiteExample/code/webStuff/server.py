@@ -24,7 +24,7 @@ def birthdays():
     return render_template("testpage.html", dates=dates, x=x)
 
 
-@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemonInfo'])
+@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemonInfo', 'query'])
 def SinglePokemonLoadPage():
     if request.method == 'POST':
         data = request.form
@@ -83,11 +83,13 @@ def PikaPediaHomepage():
     print("Homepage Triggered")
     indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
+    print(query)
+    print("\n")
 
     search_results = search(indexer, str(query))
     lengthList = len(search_results)
 
-    return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList)
+    return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList, query=query)
 
 #Found at URL: http://flask.pocoo.org/snippets/40/
 @app.context_processor

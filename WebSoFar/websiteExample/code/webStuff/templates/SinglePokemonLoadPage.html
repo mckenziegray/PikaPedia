@@ -8,11 +8,15 @@
 <!-- search form 6 -->
 <div class="button_box2">
 	<form class="form-wrapper-2 cf"  action="{{ url_for('PikaPediaHomepage') }}" method="post">
-		<input  name="IndexSearch" type="text" placeholder="Search here..." required>
+		<input name="IndexSearch" type="text" placeholder="Search here..." required>
 		<button type="submit">Search</button>
 	</form>
 </div>
-
+<div>
+	<div>
+		<button onclick="history.back(-1)" class="GoBackButton" id="rcorners3">Previous Results</button>
+	</div>
+</div>
 <body>
 <table class="centered thick-border">
 	<table>
