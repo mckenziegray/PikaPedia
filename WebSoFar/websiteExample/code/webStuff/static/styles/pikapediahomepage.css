@@ -62,16 +62,16 @@ th, td {
 }
 
 .container:hover .middle {
-  opacity: 1;
-  background: yellow;
+  opacity: .3;
+  background-color: #ffffff;
   height: 70%;
   width: 70%;
 }
 
 .text {
-  background-color: #4CAF50
-  color: white;
-  font-size: 16px;
+  background-color: #4CAF50;
+  color: black;
+  font-size: 24px;
   padding: 16px 32px;
 }
 

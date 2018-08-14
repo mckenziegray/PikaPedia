@@ -20,7 +20,7 @@
 				{% else %}
 				<td style="background-color: white;">
 					<div class="container">
-						<img src="https://img.pokemondb.net/artwork/{{search_results[num+num2]['name']}}.jpg" alt="Avatar" class="image" style="width:100%" style="height:100%" id="rcorners1">
+						<img src="https://img.pokemondb.net/artwork/{{search_results[num+num2]['name']}}.jpg" alt="{{search_results[num+num2]['name']}}" class="image" style="width:100%" style="height:100%" id="rcorners1">
 						<form method="get" action="{{ url_for('SinglePokemonLoadPage') }}">
 							<input class="middle"  value="{{search_results[num+num2]['name']}}" method="get" type="submit">
 								<input type="hidden" name="pokemonInfo" value="{{search_results[num+num2]}}">
