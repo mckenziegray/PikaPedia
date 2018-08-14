@@ -74,3 +74,17 @@ th, td {
   font-size: 16px;
   padding: 16px 32px;
 }
+
+#rcorners1 {
+    border-radius: 15px 50px 30px;
+}
+#rcorners2 {
+    border-radius: 15px 50px 30px 5px;
+}
+#rcorners3 {
+    border-radius: 20px;
+}
+#rcorners4 {
+    border-radius: 10px;
+		margin-bottom: 2%;
+}

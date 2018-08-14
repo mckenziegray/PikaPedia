@@ -40,6 +40,7 @@ def SinglePokemonLoadPage():
 
     name = data.get('name')
     id = data.get('id')
+    idInt = int(id)
     type_1 = data.get('type_2')
     type_2 = data.get('type_1')
     ability_1 = data.get('ability_1')
@@ -49,6 +50,15 @@ def SinglePokemonLoadPage():
     second_forms = data.get('second_forms')
     third_forms = data.get('third_forms')
 
+    #for TMmoves in moves:
+    moves = moves.split('\'')
+    #moves.remove(' ')
+    moveList = []
+    for moveSpot in range(0,len(moves),2):
+        moveList.append(str(moves[moveSpot]))
+        print("->"+str(moves[moveSpot])+"<-")
+
+    lenMoveList = len(moveList)
     #print("Results: "+ str(search_results))
     #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
 
@@ -61,7 +71,10 @@ def SinglePokemonLoadPage():
         moves=moves,
         first_form=first_form,
         second_forms=second_forms,
-        third_forms=third_forms)
+        third_forms=third_forms,
+        idInt=idInt,    #used for Counter in HTML
+        lenMoveList=lenMoveList,
+        moveList=moveList) #Holds Moves List
 
 
 @app.route('/', methods=['GET', 'POST'])

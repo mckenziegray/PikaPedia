@@ -19,12 +19,23 @@
 		<div class="card" class"centered"  style="background-color: yellow" id="rcorners1">
 			<div class="row">
 				<div class="column" style="background-color:yellow;" id="rcorners1">
-					<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
+					{% if idInt < 650 %}
+					<!--  Images Scraped From URL: sprites.pokecheck.org/-->
+						<img src="./static/images/{{name}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
+					{% else %}
+						<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
+					{% endif %}
 					<div style="background-color: blue;" id="rcorners3" class = "card">
 						Moves
-						<p class="movesList" style="background-color: white;" id="rcorners4">
-							{{moves}}
-						</p>
+						<div>
+
+						{% for moveIndex in range(lenMoveList) %}
+							<p class="movesList" style="background-color: white;" id="rcorners4">
+									{{moveList[moveIndex]}}
+							</p>
+						{% endfor %}
+
+						</div>
 					</div>
 				</div>
 				<div class="column" style="background-color:yellow;" id="rcorners1">
@@ -33,39 +44,39 @@
 						</h1>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Id
-							<p class="card" style="background-color: white;" id="rcorners4">
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{id}}
-							</p>
+							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Ability 1
-							<p class="card" style="background-color: white;" id="rcorners4">
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{ability_1}}
-							</p>
+							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Ability 2
-							<p class="card" style="background-color: white;" id="rcorners4">
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{ability_2}}
-							</p>
+							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							First Evolution
-							<p class="card" style="background-color: white;" id="rcorners4">
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{first_form}}
-							</p>
+							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Second Evolution
-							<p class="card" style="background-color: white;" id="rcorners4">
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{second_forms}}
-							</p>
+							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Third Evolution
-							<p class="card" style="background-color: white;" id="rcorners3">
+							<div class="card" style="background-color: white;" id="rcorners3">
 								{{third_forms}}
-							</p>
+							</div>
 						</div>
 				</div>
 			</div>
