@@ -24,7 +24,7 @@ def birthdays():
     return render_template("testpage.html", dates=dates, x=x)
 
 
-@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemon', 'pokemonInfo'])
+@app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemonInfo'])
 def SinglePokemonLoadPage():
     if request.method == 'POST':
         data = request.form
@@ -32,15 +32,46 @@ def SinglePokemonLoadPage():
         data = request.args
 
     print("Single Page Triggered")
-    pokemon = data.get('post')
+
     info = data.get('pokemonInfo')
+
     print(info.replace("'", '"'))
     lengthInfo = len(info)
 
     info = json.loads(info.replace("'", '"'))
 
-    return render_template('SinglePokemonLoadPage.html', pokemon=pokemon, info=info, lengthInfo=lengthInfo)
+    name = info['name']
+    id = info['id']
+    idInt = int(id)
+    type_1 = info['type_2']
+    type_2 = info['type_1']
+    ability_1 = info['ability_1']
+    ability_2 = info['ability_2']
+    moves = info['moves']
+    first_form = info['first_form']
+    second_forms = info['second_forms']
+    third_forms = info['third_forms']
+    pokemonEvo2Length = len(second_forms)
+    pokemonEvo3Length = len(third_forms)
 
+    print()
+    print(third_forms)
+    print()
+
+    return render_template('SinglePokemonLoadPage.html',
+    #Variables for web page
+        name=name,
+        id=id,
+        ability_1=ability_1,
+        ability_2=ability_2,
+        moves=moves,
+        first_form=first_form,
+        second_forms=second_forms,
+        third_forms=third_forms,
+        idInt=idInt,    #used for Counter in HTML
+        moveList=moves, #Holds Moves List
+        pokemonEvo2Length=pokemonEvo2Length,
+        pokemonEvo3Length=pokemonEvo3Length)
 
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
