@@ -34,7 +34,10 @@ th, td {
     background-size: cover;
 	background-position: center;
 	text-align: center;
-	height: 100px;
+}
+
+.placeholder{
+	border: 5px solid black;
 }
 
 #rcorners1 {
@@ -44,20 +47,36 @@ th, td {
     border-radius: 15px 50px 30px 5px;
 }
 #rcorners3 {
-    border-radius: 5px;
+    border-radius: 20px;
 }
 #rcorners4 {
-    border-radius: 15px 50px 30px;
+    border-radius: 10px;
+		margin-bottom: 2%;
 }
 
 .card {
 	 /* Add shadows to create the "card" effect */
 	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	 transition: 0.3s;
-	 height: auto;
-	 width: 40%;
+	 height: 40%;
+	 width: 90%;
+	 padding-top: 2%;
+	 padding-bottom: 2%;
 	 margin: auto;
-	 border: 1px solid black;
+	 border: 4px solid black;
+}
+
+.cardPokemon {
+	 /* Add shadows to create the "card" effect */
+	 background-color: white;
+	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	 transition: 0.3s;
+	 height: 40%;
+	 width: 50%;
+	 margin: auto;
+	 padding-bottom: 15%;
+	 border: 4px solid black;
+	 margin-bottom: 5%;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -69,3 +88,37 @@ th, td {
 .container {
 	 padding: 2px 16px;
 }
+
+
+.movesList{
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	height: 40%;
+	width: 90%;
+	margin: auto;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	border: 4px solid black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    height: 50%; /* Should be removed. Only for demonstration */
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Serch bar found here: https://codepen.io/huange/pen/rbqsD*/

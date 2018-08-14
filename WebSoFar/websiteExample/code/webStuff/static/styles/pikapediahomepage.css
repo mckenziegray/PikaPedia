@@ -9,12 +9,12 @@ html {
 }
 
 body {
-	
+
 }
 
 .centered {
 	margin: auto;
-	width: 20%;
+	width: 80%;
 }
 
 .thick-border {
@@ -30,7 +30,6 @@ th, td {
     background-size: cover;
 	background-position: center;
 	text-align: center;
-	height: 100px;
 }
 
 .container {

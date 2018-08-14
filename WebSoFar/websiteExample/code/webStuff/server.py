@@ -78,15 +78,18 @@ def PikaPediaHomepage():
     #pokemon = data.get('onclick')
 
     search_results = search(indexer, str(query))
-    print("\n\nResults: "+str(search_results))
+    #print("\n\nResults: "+str(search_results))
+
     lengthList = len(search_results)
+
+
 
     pokemon = 'hi'
     #add buton for SinglePokemonLoadPage
-    print("Results: "+ str(search_results))
+    #print("Results: "+ str(search_results))
     #time.sleep(5)   # Delays for 5 seconds. You can also use a float value.
 
-    print("\n\nPokemon: "+str(pokemon))
+    #print("\n\nPokemon: "+str(pokemon))
 
     return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList)
 
