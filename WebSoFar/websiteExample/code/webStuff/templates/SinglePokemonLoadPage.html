@@ -28,13 +28,11 @@
 					<div style="background-color: blue;" id="rcorners3" class = "card">
 						Moves
 						<div>
-
 						{% for move in moveList %}
 							<p class="movesList" style="background-color: white;" id="rcorners4">
 									{{move}}
 							</p>
 						{% endfor %}
-
 						</div>
 					</div>
 				</div>
@@ -49,39 +47,46 @@
 							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							Ability 1
+							Abilitys
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{ability_1}}
 							</div>
-						</div>
-						<div class="card" style="background-color: red;" id="rcorners3">
-							Ability 2
-							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								{{ability_2}}
-							</div>
+							{% if ability_2 != "None" %}
+								<div class="cardValue" style="background-color: white;" id="rcorners4">
+									{{ability_2}}
+								</div>
+							{% endif %}
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							First Evolution
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								{{first_form}}
+								<img src="https://img.pokemondb.net/artwork/{{first_form}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 							</div>
 						</div>
+						{% if second_forms[0] != '' %}
 						<div class="card" style="background-color: red;" id="rcorners3">
-							Second Evolution
+							{% if pokemonEvo2Length > 3 %}
+								Forms
+							{% else %}
+								Second Evolution
+							{% endif %}
 							{% for pokemon in second_forms %}
-								<div class="cardValue" style="background-color: white;" id="rcorners4">
-									{{pokemon}}
-								</div>
+									<div class="cardValue" style="background-color: white;" id="rcorners4">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
+									</div>
 							{% endfor %}
 						</div>
-						<div class="card" style="background-color: red;" id="rcorners3">
-							Third Evolution
-							{% for pokemon in third_forms %}
-								<div class="cardValue" style="background-color: white;" id="rcorners4">
-									{{pokemon}}
-								</div>
-							{% endfor %}
-						</div>
+						{% endif %}
+						{% if third_forms[0] != '' %}
+							<div class="card" style="background-color: red;" id="rcorners3">
+								Third Evolution
+								{% for pokemon in third_forms %}
+									<div class="cardValue" style="background-color: white;" id="rcorners4">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
 				</div>
 			</div>
 		</div>

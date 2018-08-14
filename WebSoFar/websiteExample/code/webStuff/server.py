@@ -32,7 +32,7 @@ def SinglePokemonLoadPage():
         data = request.args
 
     print("Single Page Triggered")
-    
+
     info = data.get('pokemonInfo')
 
     print(info.replace("'", '"'))
@@ -51,6 +51,12 @@ def SinglePokemonLoadPage():
     first_form = info['first_form']
     second_forms = info['second_forms']
     third_forms = info['third_forms']
+    pokemonEvo2Length = len(second_forms)
+    pokemonEvo3Length = len(third_forms)
+
+    print()
+    print(third_forms)
+    print()
 
     return render_template('SinglePokemonLoadPage.html',
     #Variables for web page
@@ -63,7 +69,9 @@ def SinglePokemonLoadPage():
         second_forms=second_forms,
         third_forms=third_forms,
         idInt=idInt,    #used for Counter in HTML
-        moveList=moves) #Holds Moves List
+        moveList=moves, #Holds Moves List
+        pokemonEvo2Length=pokemonEvo2Length,
+        pokemonEvo3Length=pokemonEvo3Length)
 
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
