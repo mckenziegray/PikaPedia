@@ -18,7 +18,14 @@
 						<div class="card" style="background-color: red;" id="rcorners3">
 							{{k}}
 							<p class="card" style="background-color: white;" id="rcorners3">
-								{{v}}
+								{% if v is iterable and not v is string %}
+									{% for item in v %}
+										{{item}}
+										<br>
+									{% endfor %}
+								{% else %}
+									{{v}}
+								{% endif %}
 							</p>
 						</div>
 					{% endfor %}

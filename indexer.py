@@ -2,6 +2,7 @@ import sys
 import whoosh
 import os
 import csv
+import json
 from whoosh.index import create_in
 from whoosh.fields import * 
 from whoosh.qparser import QueryParser
@@ -38,8 +39,10 @@ def search(indexer, search_term):
         for result in results:
             result_dict = {}
             for key, value in result.items():
+                if key in ['moves', 'second_forms', 'third_forms']:
+                    value = value.split(' ')
                 result_dict[key] = value
-            results_list.append(result_dict)
+            results_list.append(result_dict)       
 
     return results_list
 
@@ -90,8 +93,8 @@ def index(pokemon_db, evolutions_db, index_dir):
                 for evolution_chain in evolutions_csv_reader:
                     if row['Name'] == evolution_chain['First Form'] or row['Name'] in evolution_chain['Second Forms'] or row['Name'] in evolution_chain['Third Forms']:
                         evolution_line[0] = evolution_chain['First Form']
-                        evolution_line[1] = evolution_chain['Second Forms'].strip("[']").replace(',', ' ')
-                        evolution_line[2] = evolution_chain['Third Forms'].strip("[']").replace(',', ' ')
+                        evolution_line[1] = evolution_chain['Second Forms'].strip("[]").replace("'", "").replace(',', '')
+                        evolution_line[2] = evolution_chain['Third Forms'].strip("[]").replace("'", "").replace(',', '')
                         break
 
             if row['Name'] == "glaceon" or row['Name'] == "leafeon":
@@ -106,7 +109,7 @@ def index(pokemon_db, evolutions_db, index_dir):
                 ability_1=row["Ability 1"],
                 ability_2=row["Ability 2"],
                 ability_hidden=row["Ability 2"],
-                moves=row["Moves"].strip("[']").replace(',', ' '),
+                moves=row["Moves"].strip("[]").replace("'", "").replace(',', ''),
                 speed=row["Speed"],
                 sp_def=row["Special Defense"],
                 sp_atk=row["Special Attack"],
