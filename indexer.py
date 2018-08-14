@@ -3,15 +3,21 @@ import whoosh
 import os
 import csv
 import json
+import string
 from whoosh.index import create_in
 from whoosh.fields import * 
 from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
 from whoosh import qparser
 
-'''Searches through the index using the given search phrase and prints the search results'''
+'''Searches through the index using the given search phrase and returns the search results as a list of dictionaries'''
 def search(indexer, search_term):
     results = None
+
+    # Remove any punctuation from the query (special treatment of ' for Farfetch'd)
+    search_term = search_term.translate({ord(c): (' ' if c != "'" else '') for c in (string.punctuation}) # From Blckknght on stack overflow
+    print("Searching for \"" + search_term + "\"")
+
     with indexer.searcher() as searcher:
         query = MultifieldParser(
             [
@@ -30,6 +36,7 @@ def search(indexer, search_term):
             schema=indexer.schema, 
             group=qparser.OrGroup
         ).parse(search_term)
+
         results = searcher.search(query, limit=200) # Return the top 200 results matching the query
         print("Query matches: " + str(len(results)))
         print("Results returned: " + str(results.scored_length()))
