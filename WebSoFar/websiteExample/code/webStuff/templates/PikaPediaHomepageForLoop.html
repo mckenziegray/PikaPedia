@@ -1,0 +1,36 @@
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/testpage.css') }}">
+
+<body>
+<table class="centered thick-border">
+
+
+
+	<form action="{{ url_for('PikaPediaHomepage') }}" method="post">
+	    <input type="text" name="IndexSearch">
+	    <input type="submit">
+	</form>
+	<tr>
+		<th>Pokemon</th>
+	</tr>
+	{% for num in range(lengthList): %}
+		<tr>
+			<td>
+				<div class="container">
+					<img src="https://img.pokemondb.net/artwork/{{search_results[num]['name']}}.jpg" alt="Avatar" class="image" style="width:100%">
+					<div class="middle">
+							<form method="get" action="{{ url_for('SinglePokemonLoadPage') }}">
+								<input type="submit" name="post" value="{{search_results[num]['name']}}" />
+								{% for k in search_results[num]: %}
+									<input type="hidden" name="{{k}}" value="{{search_results[num]['{{k}}']}}">
+									<p>{{search_results[num]['{{k}}']}}</p>
+								{% endfor %}
+							</form>
+					</div>
+				</div>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+<body>
