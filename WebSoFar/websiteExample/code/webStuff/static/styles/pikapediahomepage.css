@@ -55,9 +55,6 @@ th, td {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-  font-weight:bold;
-  font-color: black;
-  font-size: 30px
 }
 
 .container:hover .image {
@@ -65,11 +62,10 @@ th, td {
 }
 
 .container:hover .middle {
-  opacity: 0;
+  opacity: .3;
   background-color: #ffffff;
   height: 70%;
   width: 70%;
-  font-weight: bold;
 }
 
 .text {
