@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/singlepage.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/Search.css') }}">
 <head>
-<title>Design search Button</title>
+<title>{{ name|capitalize }}</title>
 </head>
 <!-- search form 6 -->
 <div class="button_box2">
@@ -14,13 +14,16 @@
 </div>
 <div>
 	<div>
-		<button onclick="history.back(-1)" class="GoBackButton" id="rcorners3">Previous Results</button>
+		<button onclick="history.back(-1)" class="GoBackButton" id="rcorners3">Back to Results</button>
 	</div>
 </div>
 <body>
 <table class="centered thick-border">
 	<table>
-		<div class="overallcard" class"centered"  style="background-color: yellow" id="rcorners1">
+		<!--<div class="overallcard" class"centered"  style="background-color: yellow" id="rcorners1">-->
+
+		<div class="card" class"centered"  style="background-color: yellow; width: 800px" id="rcorners1">
+
 			<div class="row">
 				<div class="column" style="background-color:yellow;">
 					<div class="scrollBox">
@@ -35,19 +38,27 @@
 
 						{% for move in moveList %}
 							<p class="movesList" style="background-color: white;" id="rcorners4">
-									{{move}}
+									{{ move|capitalize }}
 							</p>
 						{% endfor %}
 						</div>
 					</div>
 				</div>
-				<div class="column" style="background-color:yellow;">
-					<div class="scrollBox">
-						<h1>
-								{{name}}
+
+<!--				<div class="column" style="background-color:yellow;"> -->
+<!--					<div class="scrollBox"> -->
+<!--						<h1> -->
+<!--								{{name}} -->
+<!--						</h1> -->
+<!--						<div class="card" style="background-color: red;" id="rcorners3"> -->
+<!--							Id -->
+
+				<div class="column" style="background-color:yellow; float:right;" id="rcorners1">
+						<h1 style="color:black; font: verdana; font-size: 60px;" >
+							{{ name|capitalize }}
 						</h1>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							Id
+							<h2 style ="font: verdana; font-size: 30px;">ID</h2>
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{id}}
 							</div>
@@ -55,11 +66,11 @@
 						<div class="card" style="background-color: red;" id="rcorners3">
 							Abilitys
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								{{ability_1}}
+								{{ ability_1|capitalize }}
 							</div>
 							{% if ability_2 != "None" %}
 								<div class="cardValue" style="background-color: white;" id="rcorners4">
-									{{ability_2}}
+									{{ ability_2|capitalize }}
 								</div>
 							{% endif %}
 						</div>
