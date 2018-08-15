@@ -15,7 +15,7 @@ def search(indexer, search_term):
     results = None
 
     # Remove any punctuation from the query (special treatment of ' for Farfetch'd)
-    search_term = search_term.translate({ord(c): (' ' if c != "'" else '') for c in (string.punctuation}) # From Blckknght on stack overflow
+    search_term = search_term.translate({ord(c): (' ' if c != "'" else '') for c in (string.punctuation)}) # From Blckknght on stack overflow
     print("Searching for \"" + search_term + "\"")
 
     with indexer.searcher() as searcher:
