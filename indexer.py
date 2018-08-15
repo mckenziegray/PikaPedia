@@ -4,7 +4,7 @@ import os
 import csv
 import json
 import string
-from whoosh.index import create_in
+from whoosh.index import create_in, open_dir
 from whoosh.fields import * 
 from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
@@ -12,7 +12,8 @@ from whoosh import qparser
 
 '''Searches through the index using the given search phrase.
     Returns a list containing the search results for the given page as well as the total number of results.'''
-def search(indexer, search_term, page_num):
+def search(index_dir, search_term, page_num):
+    indexer = open_dir(index_dir)
     results = None
 
     # Remove any punctuation from the query (special treatment of ' for Farfetch'd)
@@ -137,14 +138,15 @@ def index(pokemon_db, evolutions_db, index_dir):
     return indexer
 
 def main():
-    indexer = index("PokeData.csv", "EvolutionChains.csv", "index_dir")
+    index_dir = "index_dir"
+    indexer = index("PokeData.csv", "EvolutionChains.csv", index_dir)
 
     # Makeshift search interface for testing
     while (True):
         search_term = input("Search: ")
         if search_term == "quit":
             break
-        search(indexer, search_term, 1)
+        search(index_dir, search_term, 1)
 
 if __name__ == '__main__':
     main()

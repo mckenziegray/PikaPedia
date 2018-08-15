@@ -81,7 +81,6 @@ def PikaPediaHomepage():
         data = request.args
 
     print("Homepage Triggered")
-    indexer = index("static/Storage/PokeData.csv", "static/Storage/EvolutionChains.csv", "index_dir")
     query = data.get('IndexSearch')
     print(query)
     print("\n")
@@ -94,7 +93,7 @@ def PikaPediaHomepage():
 
     print("Going to page " + str(page_num))
 
-    search_results_tuple = search(indexer, str(query), page_num)
+    search_results_tuple = search("index_dir", str(query), page_num)
     search_results = search_results_tuple[0]
     lengthList = len(search_results)
     print("Total results: " + str(search_results_tuple[1]))
