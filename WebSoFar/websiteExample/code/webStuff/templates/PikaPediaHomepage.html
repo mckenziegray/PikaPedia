@@ -40,9 +40,9 @@
 <table>
 	{% for i in range(1, (total_results/15)|round(0, 'ceil')|int + 1) %}
 		<tr>
-			<form  action="{{ url_for('PikaPediaHomepage') }}" method="get">
+			<form action="{{ url_for('PikaPediaHomepage') }}" method="get">
 				<input type="hidden" name="page_num" value="{{ i }}" />
-				<button type="submit">{{ i }}</button>
+				<button class="buttonResultPages" type="submit">{{ i }}</button>
 			</form>
 		</tr>
 	{% endfor %}

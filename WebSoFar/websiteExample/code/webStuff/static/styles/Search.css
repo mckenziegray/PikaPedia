@@ -2,6 +2,8 @@
 
 .button_box2 {
 margin: auto;
+margin-top: 1%;
+margin-bottom: 1%;
 }
 /*-------------------------------------*/
 .cf:before, .cf:after{
