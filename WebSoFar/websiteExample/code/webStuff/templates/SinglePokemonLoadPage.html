@@ -54,7 +54,32 @@
 							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							<h2 style="font: verdana; font-size: 30px;">Abilities<h2/>
+							<h2 style="font: verdana; font-size: 30px;">Type</h2>
+							{% if type_1 != "None" %} <!--For some reason, type 2 can sometimes be the only type-->
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ type_1|capitalize }}
+							</div>
+							{% endif %}
+							{% if type_2 != "None" %}
+								<div class="cardValue" style="background-color: white;" id="rcorners4">
+									{{ type_2|capitalize }}
+								</div>
+							{% endif %}
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Height</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ height / 10 }} m
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Weight</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ weight / 10 }} kg
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Abilities</h2>
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{ ability_1|capitalize }}
 							</div>
@@ -64,6 +89,50 @@
 								</div>
 							{% endif %}
 						</div>
+						{% if hidden_ability != "None" %}
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Hidden Ability</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ hidden_ability|capitalize }}
+							</div>
+						</div>
+						{% endif %}
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">HP</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ hp }}
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Attack</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ attack }}
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Defense</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ defense }}
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Special Attack</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ sp_atk }}
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Special Defense</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ sp_def }}
+							</div>
+						</div>
+						<div class="card" style="background-color: red;" id="rcorners3">
+							<h2 style="font: verdana; font-size: 30px;">Speed</h2>
+							<div class="cardValue" style="background-color: white;" id="rcorners4">
+								{{ speed }}
+							</div>
+						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
 							<h2 style="font: verdana; font-size: 30px;">First Evolution</h2>
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
@@ -72,11 +141,7 @@
 						</div>
 						{% if second_forms[0] != '' %}
 						<div class="card" style="background-color: red;" id="rcorners3">
-							{% if pokemonEvo2Length > 3 %}
-								<h2 style= "font: verdana; font-size: 30px;">Forms</h2>
-							{% else %}
-								<h2 style="font: verdana; font-size: 30px;">Second Evolution</h2>
-							{% endif %}
+							<h2 style="font: verdana; font-size: 30px;">Second Evolution</h2>
 							{% for pokemon in second_forms %}
 									<div class="cardValue" style="background-color: white;" id="rcorners4">
 										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1">
