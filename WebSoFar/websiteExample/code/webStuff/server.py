@@ -100,11 +100,11 @@ def PikaPediaHomepage():
     print("Total results: " + str(search_results_tuple[1]))
 
     return render_template(
-        'PikaPediaHomepage.html', 
-        search_results=search_results, 
-        lengthList=lengthList, 
-        query=query, 
-        page_num=page_num, 
+        'PikaPediaHomepage.html',
+        search_results=search_results,
+        lengthList=lengthList,
+        query=query,
+        page_num=page_num,
         total_results=search_results_tuple[1]
     )
 
