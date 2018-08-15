@@ -86,10 +86,27 @@ def PikaPediaHomepage():
     print(query)
     print("\n")
 
-    search_results = search(indexer, str(query))
-    lengthList = len(search_results)
+    page_num = data.get("page_num")
+    if page_num is None:
+        page_num = 1
+    else:
+        page_num = int(page_num)
 
-    return render_template('PikaPediaHomepage.html', search_results=search_results, lengthList=lengthList, query=query)
+    print("Going to page " + str(page_num))
+
+    search_results_tuple = search(indexer, str(query), page_num)
+    search_results = search_results_tuple[0]
+    lengthList = len(search_results)
+    print("Total results: " + str(search_results_tuple[1]))
+
+    return render_template(
+        'PikaPediaHomepage.html', 
+        search_results=search_results, 
+        lengthList=lengthList, 
+        query=query, 
+        page_num=page_num, 
+        total_results=search_results_tuple[1]
+    )
 
 #Found at URL: http://flask.pocoo.org/snippets/40/
 @app.context_processor

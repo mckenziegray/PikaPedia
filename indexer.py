@@ -10,8 +10,9 @@ from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
 from whoosh import qparser
 
-'''Searches through the index using the given search phrase and returns the search results as a list of dictionaries'''
-def search(indexer, search_term):
+'''Searches through the index using the given search phrase.
+    Returns a list containing the search results for the given page as well as the total number of results.'''
+def search(indexer, search_term, page_num):
     results = None
 
     # Remove any punctuation from the query (special treatment of ' for Farfetch'd)
@@ -37,8 +38,9 @@ def search(indexer, search_term):
             group=qparser.OrGroup
         ).parse(search_term)
 
-        results = searcher.search(query, limit=200) # Return the top 200 results matching the query
-        print("Query matches: " + str(len(results)))
+        results = searcher.search_page(query, page_num, pagelen=15) # Return the top 200 results matching the query
+        num_results = len(results)
+        print("Query matches: " + str(num_results))
         print("Results returned: " + str(results.scored_length()))
 
         # Results are inaccessible after the searcher closes, so make a copy
@@ -51,7 +53,7 @@ def search(indexer, search_term):
                 result_dict[key] = value
             results_list.append(result_dict)       
 
-    return results_list
+    return (results_list, num_results)
 
 '''Creates the index in the given directory'''
 def index(pokemon_db, evolutions_db, index_dir):
@@ -142,7 +144,7 @@ def main():
         search_term = input("Search: ")
         if search_term == "quit":
             break
-        search(indexer, search_term)
+        search(indexer, search_term, 1)
 
 if __name__ == '__main__':
     main()
