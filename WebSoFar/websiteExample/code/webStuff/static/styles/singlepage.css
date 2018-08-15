@@ -56,18 +56,20 @@ th, td {
 }
 
 .card {
-	 /* Add shadows to create the "card" effect */
-	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	 transition: 0.3s;
-	 height: 40%;
-	 width: 95%;
-	 padding-top: 2%;
-	 padding-bottom: 2%;
-	 padding-right: 5%;
-	 padding-left: 5%;
-	 /*margin: auto;*/
-	 border: 4px solid black;
-	 color: #fff;
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	position: relative;
+	transition: 0.3s;
+	height: 40%;
+	width: 100%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-right: 2%;
+	padding-left: 2%;
+	display: inline-block;
+	margin: 0 auto;
+	border: 4px solid black;
+	color: #fff;
 	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
@@ -75,15 +77,19 @@ th, td {
 	 /* Add shadows to create the "card" effect */
 	 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	 transition: 0.3s;
-	 width: 60%;
-	 padding-top: 2%;
-	 padding-bottom: 2%;
-	 margin: auto;
+	 /* width: 30%; */
+	 padding-top: 1%;
+	 padding-bottom: 1%;
+	 padding-right: 1%;
+	 padding-left: 1%;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
 	 border: 3px solid black;
-	 background-color: blue;
+	 background-color: gray;
 	 color: #fff;
 	 text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 	 font-size: 150%;
+	 display: inline-block;
 }
 
 .cardValue {
@@ -103,11 +109,11 @@ th, td {
 
 .cardMainPokemon {
 	background-color: white;
-	transition: 0.3s
-	height: 60%;
-	width: 80%;
+	transition: 0.3s;
+	height: 70%;
+	width: 70%;
 	margin: auto;
-	padding-bottom: 15%;
+	padding: 2%;
 	border: 4px solid black;
 	margin-bottom: 5%;
 }
@@ -120,7 +126,7 @@ th, td {
 	 height: 40%;
 	 width: 60%;
 	 margin: auto;
-	 padding-bottom: 15%;
+	 padding: 2%;
 	 /*border: 4px solid black;*/
 	 margin-bottom: 5%;
 }
@@ -149,8 +155,8 @@ th, td {
 	height: 40%;
 	width: 70%;
 	margin: auto;
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 2%;
+	padding-bottom: 52;
 	border: 4px solid black;
 	color: black;
 	text-shadow: none;
@@ -164,9 +170,9 @@ th, td {
 /* Create two equal columns that floats next to each other */
 .column {
     float: center;
-    width: 40%;
+    width: 45%;
     height: 50%; /* Should be removed. Only for demonstration */
-
+	display: inline-block;
 }
 
 /* Clear floats after the columns */
