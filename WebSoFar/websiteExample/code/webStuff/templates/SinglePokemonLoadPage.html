@@ -20,18 +20,19 @@
 <body>
 <table class="centered thick-border">
 	<table>
-		<div class="card" class"centered"  style="background-color: yellow" id="rcorners1">
+		<div class="overallcard" class"centered"  style="background-color: yellow" id="rcorners1">
 			<div class="row">
-				<div class="column" style="background-color:yellow; float: left;" id="rcorners1">
+				<div class="column" style="background-color:yellow;">
+					<div class="scrollBox">
 					{% if idInt < 650 %}
 					<!--  Images Scraped From URL: sprites.pokecheck.org/-->
-						<img src="./static/images/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1">
+						<img src="./static/images/{{name}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 					{% else %}
-						<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1">
+						<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 					{% endif %}
 					<div style="background-color: blue;" id="rcorners3" class = "card">
-						<h2 style=" font: verdana; font-size: 30px">Moves</h2>
-						<div>
+						Moves
+
 						{% for move in moveList %}
 							<p class="movesList" style="background-color: white;" id="rcorners4">
 									{{move}}
@@ -40,16 +41,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="column" style="background-color:yellow; float:right;" id="rcorners1">
-						<h1 style="color:black; font: verdana; font-size: 60px;" >{{name}}</h1>
+				<div class="column" style="background-color:yellow;">
+					<div class="scrollBox">
+						<h1>
+								{{name}}
+						</h1>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							<h2 style ="font: verdana; font-size: 30px;">Id</h2>
+							Id
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{id}}
 							</div>
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							<h2 style="font: verdana; font-size: 30px;">Abilities<h2/>
+							Abilitys
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
 								{{ability_1}}
 							</div>
@@ -60,35 +64,36 @@
 							{% endif %}
 						</div>
 						<div class="card" style="background-color: red;" id="rcorners3">
-							<h2 style="font: verdana; font-size: 30px;">First Evolution</h2>
+							First Evolution
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								<img src="https://img.pokemondb.net/artwork/{{first_form}}.jpg"  alt="{{first_form}}" class="cardPokemon" id="rcorners1">
+								<img src="https://img.pokemondb.net/artwork/{{first_form}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 							</div>
 						</div>
 						{% if second_forms[0] != '' %}
 						<div class="card" style="background-color: red;" id="rcorners3">
 							{% if pokemonEvo2Length > 3 %}
-								<h2 style= "font: verdana; font-size: 30px;">Forms</h2>
+								Forms
 							{% else %}
-								<h2 style="font: verdana; font-size: 30px;">Second Evolution</h2>
+								Second Evolution
 							{% endif %}
 							{% for pokemon in second_forms %}
 									<div class="cardValue" style="background-color: white;" id="rcorners4">
-										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 									</div>
 							{% endfor %}
 						</div>
 						{% endif %}
 						{% if third_forms[0] != '' %}
 							<div class="card" style="background-color: red;" id="rcorners3">
-								<h2 style="font: verdana; font-size: 30px;">Third Evolution</h2>
+								Third Evolution
 								{% for pokemon in third_forms %}
 									<div class="cardValue" style="background-color: white;" id="rcorners4">
-										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="Avatar" class="cardPokemon" id="rcorners1">
 									</div>
 								{% endfor %}
 							</div>
 						{% endif %}
+					</div>
 				</div>
 			</div>
 		</div>
