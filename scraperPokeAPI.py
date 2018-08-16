@@ -105,7 +105,7 @@ def scrape_evolutions(file_name, start_id, end_id):
 			csvwriter.writerow(row)
 
 def main():
-	# scrape_evolutions("EvolutionChains.csv", 1, 423) # Total 423
+	scrape_evolutions("EvolutionChains.csv", 1, 423) # Total 423
 	scrape_pokemon("PokeData.csv", 1, 802) # Total 802
 
 if __name__ == '__main__':
