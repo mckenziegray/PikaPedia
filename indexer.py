@@ -118,7 +118,7 @@ def index(pokemon_db, evolutions_db, index_dir):
                 type_2=row["Type 2"],
                 ability_1=row["Ability 1"],
                 ability_2=row["Ability 2"],
-                ability_hidden=row["Ability 2"],
+                ability_hidden=row["Hidden Ability"],
                 moves=row["Moves"].strip("[]").replace("'", "").replace(',', ''),
                 speed=row["Speed"],
                 sp_def=row["Special Defense"],

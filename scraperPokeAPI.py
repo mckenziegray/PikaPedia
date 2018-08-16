@@ -10,7 +10,7 @@ evolutions_base_url = "http://pokeapi.co/api/v2/evolution-chain/"
 def scrape_pokemon(file_name, start_id, end_id):
 	with open(file_name, "w", newline='') as f: # 'with' provides free exception handling and closes the file automatically
 		csvwriter = csv.writer(f, delimiter = ',')
-		csvwriter.writerow(('Number','Name','Base Experience','Height', 'Weight', 'Type 1','Type 2','Ability 1','Ability 2','Ability 3','Speed','Special Defense','Special Attack','Defense','Attack','HP', 'Moves'))
+		csvwriter.writerow(('Number','Name','Base Experience','Height', 'Weight', 'Type 1','Type 2','Ability 1','Ability 2','Hidden Ability','Speed','Special Defense','Special Attack','Defense','Attack','HP', 'Moves'))
 
 		# print("Before Scrape")
 		for pokemon_id in range(start_id, end_id+1):
@@ -20,6 +20,7 @@ def scrape_pokemon(file_name, start_id, end_id):
 			Stats = []    #this will record stats
 			Types = [] 	#this will record Types
 			Abilities = []	#this will record abilities
+			HiddenAbility = None
 			Moves = [] #records the pokemon's moves
 			Name = json_data['name'] #this will return name
 			BaseExperience = json_data['base_experience']     #returns experience gained for defeating this
@@ -29,7 +30,10 @@ def scrape_pokemon(file_name, start_id, end_id):
 			test_list = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),)
 
 			for num in range(len(json_data['abilities'])):
-				Abilities.append(str(json_data['abilities'][num]['ability']['name']))
+				if json_data['abilities'][num]['is_hidden']:
+					HiddenAbility = json_data['abilities'][num]['ability']['name']
+				else:
+					Abilities.append(str(json_data['abilities'][num]['ability']['name']))
 
 			for num in range(len(json_data['types'])):
 				Types.append(str(json_data['types'][num]['type']['name']))
@@ -49,8 +53,10 @@ def scrape_pokemon(file_name, start_id, end_id):
 			#Ability to added to test_list here. I used 3 because this is most possible
 			for num in range(len(Abilities)):
 				test_list = test_list + (str(Abilities[num]),)
-			for num in range(3-len(Abilities)):
+			for num in range(2-len(Abilities)):
 				test_list = test_list + (("None"),)
+			
+			test_list += ((str(HiddenAbility)),)
 				
 			stat_list = []
 		
@@ -99,7 +105,7 @@ def scrape_evolutions(file_name, start_id, end_id):
 			csvwriter.writerow(row)
 
 def main():
-	scrape_evolutions("EvolutionChains.csv", 1, 423) # Total 423
+	# scrape_evolutions("EvolutionChains.csv", 1, 423) # Total 423
 	scrape_pokemon("PokeData.csv", 1, 802) # Total 802
 
 if __name__ == '__main__':
