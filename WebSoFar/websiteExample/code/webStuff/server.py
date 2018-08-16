@@ -92,15 +92,17 @@ def PikaPediaHomepage():
         data = request.args
 
     print("Homepage Triggered")
-    query = data.get('IndexSearch')
-    print(query)
-    print("\n")
 
     page_num = data.get("page_num")
     if page_num is None:
         page_num = 1
+        query = data.get('IndexSearch')
     else:
         page_num = int(page_num)
+        query = data.get("query") # If we're moving to a new page of results, use the same query
+
+    print(query)
+    print("\n")
 
     print("Going to page " + str(page_num))
 

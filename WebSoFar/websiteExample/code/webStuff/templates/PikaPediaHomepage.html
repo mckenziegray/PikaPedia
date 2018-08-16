@@ -54,6 +54,7 @@
 		<tr>
 			<form action="{{ url_for('PikaPediaHomepage') }}" method="get">
 				<input type="hidden" name="page_num" value="{{ i }}" />
+				<input type="hidden" name="query" value="{{ query }}">
 				<button class="buttonResultPages" type="submit">{{ i }}</button>
 			</form>
 		</tr>
