@@ -26,9 +26,11 @@
 					<div class="scrollBox">
 					{% if idInt < 650 %}
 					<!--  Images Scraped From URL: sprites.pokecheck.org/-->
-						<img src="./static/images/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1">
+						<img src="./static/images/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1" 
+						onerror="this.src='./static/images/missingno.jpg'">
 					{% else %}
-						<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1">
+						<img src="https://img.pokemondb.net/artwork/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1" 
+						onerror="this.src='./static/images/missingno.jpg'">
 					{% endif %}
 						<div style="background-color: blue;" id="rcorners3" class = "card">
 							<h2 style=" font: verdana; font-size: 30px">Moves</h2>
@@ -136,7 +138,8 @@
 						<div class="card" style="background-color: red;" id="rcorners3">
 							<h2 style="font: verdana; font-size: 30px;">First Evolution</h2>
 							<div class="cardValue" style="background-color: white;" id="rcorners4">
-								<img src="https://img.pokemondb.net/artwork/{{first_form}}.jpg"  alt="{{first_form}}" class="cardPokemon" id="rcorners1">
+								<img src="https://img.pokemondb.net/artwork/{{first_form}}.jpg"  alt="{{first_form}}" class="cardPokemon" id="rcorners1"
+								onerror="this.src='./static/images/missingno.jpg'">
 							</div>
 						</div>
 						{% if second_forms[0] != '' %}
@@ -144,7 +147,8 @@
 							<h2 style="font: verdana; font-size: 30px;">Second Evolution</h2>
 							{% for pokemon in second_forms %}
 									<div class="cardValue" style="background-color: white;" id="rcorners4">
-										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1"
+										onerror="this.src='./static/images/missingno.jpg'">
 									</div>
 							{% endfor %}
 						</div>
@@ -154,7 +158,8 @@
 								<h2 style="font: verdana; font-size: 30px;">Third Evolution</h2>
 								{% for pokemon in third_forms %}
 									<div class="cardValue" style="background-color: white;" id="rcorners4">
-										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1">
+										<img src="https://img.pokemondb.net/artwork/{{pokemon}}.jpg"  alt="{{pokemon}}" class="cardPokemon" id="rcorners1"
+										onerror="this.src='./static/images/missingno.jpg'">
 									</div>
 								{% endfor %}
 							</div>
