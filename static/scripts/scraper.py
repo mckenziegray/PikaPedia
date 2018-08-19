@@ -44,13 +44,13 @@ def scrape_pokemon(file_name, start_id, end_id):
             for x in range(len(json_data['moves'])):
                 Moves.append(str(json_data['moves'][x]['move']['name']))
 
-            #Types to added to test_list here. I used 2 because this is most possible
+            # Every Pokemon has at least one, at most 2 types
             for num in range(len(Types)):
                 test_list = test_list + (str(Types[num]),)
             for num in range(2-len(Types)):
                 test_list = test_list + (("None"),)
         
-            #Ability to added to test_list here. I used 3 because this is most possible
+            # Every Pokemon has at least one, at most 2 types
             for num in range(len(Abilities)):
                 test_list = test_list + (str(Abilities[num]),)
             for num in range(2-len(Abilities)):
@@ -60,7 +60,6 @@ def scrape_pokemon(file_name, start_id, end_id):
                 
             stat_list = []
         
-            #Stats to added to test_list here.
             for i in range(6):
                 stat_list.append(str(Stats[i]))
                 test_list = test_list + (str(stat_list[i]),)
@@ -104,6 +103,7 @@ def scrape_evolutions(file_name, start_id, end_id):
             print(row)
             csvwriter.writerow(row)
 
+'''Retrieves GIFs for Pokemon through Gen 5'''
 def scrape_gifs(image_dir, db_name, start_id, end_id):
     count = 0
     with open(db_name, 'r') as f:

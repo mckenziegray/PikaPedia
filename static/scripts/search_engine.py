@@ -107,9 +107,6 @@ def index(pokemon_db, evolutions_db, index_dir):
                         evolution_line[2] = evolution_chain['Third Forms'].strip("[]").replace("'", "").replace(',', '')
                         break
 
-            if row['Name'] == "glaceon" or row['Name'] == "leafeon":
-                pass
-
             # Index the Pokemon's data
             writer.add_document(
                 name=row['Name'], 
@@ -139,7 +136,7 @@ def index(pokemon_db, evolutions_db, index_dir):
 
 def main():
     index_dir = "../index"
-    indexer = index("../db/PokeData.csv", "../db/EvolutionChains.csv", index_dir)
+    index("../db/PokeData.csv", "../db/EvolutionChains.csv", index_dir)
 
     # Makeshift search interface for testing
     while (True):
