@@ -27,7 +27,7 @@ def scrape_pokemon(file_name, start_id, end_id):
 			Height = json_data['height']     #returns height
 			Weight = json_data['weight']     #returns weight
 
-			test_list = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),) #will concattinate over time to create a row to import look for
+			PokemonList = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),) #will concattinate over time to create a row to import look for
 
 			#Hidden Ability
 			for num in range(len(json_data['abilities'])):
@@ -48,32 +48,32 @@ def scrape_pokemon(file_name, start_id, end_id):
 				Moves.append(str(json_data['moves'][x]['move']['name']))
 
 				
-			#Types to added to test_list here. I used 2 because this is most possible
+			#Types to added to PokemonList here. I used 2 because this is most possible
 			for num in range(len(Types)):
-				test_list = test_list + (str(Types[num]),)
+				PokemonList = PokemonList + (str(Types[num]),)
 			for num in range(2-len(Types)):
-				test_list = test_list + (("None"),)
+				PokemonList = PokemonList + (("None"),)
 		
-			#Ability to added to test_list here. I used 3 because this is most possible
+			#Ability to added to PokemonList here. I used 3 because this is most possible
 			for num in range(len(Abilities)):
-				test_list = test_list + (str(Abilities[num]),)
+				PokemonList = PokemonList + (str(Abilities[num]),)
 			for num in range(2-len(Abilities)):
-				test_list = test_list + (("None"),)
+				PokemonList = PokemonList + (("None"),)
 			
 			#Add hidenability
-			test_list += ((str(HiddenAbility)),) 
+			PokemonList += ((str(HiddenAbility)),) 
 				
 			stat_list = []
 		
-			#Stats to added to test_list here.
+			#Stats to added to PokemonList here.
 			for i in range(6):
 				stat_list.append(str(Stats[i]))
-				test_list = test_list + (str(stat_list[i]),)
+				PokemonList = PokemonList + (str(stat_list[i]),)
 
-			test_list += (str(Moves),)
+			PokemonList += (str(Moves),)
 
-			print(test_list)
-			csvwriter.writerow(test_list)
+			print(PokemonList)
+			csvwriter.writerow(PokemonList)
 
 '''Retrieves evolution data from the API and stores it in the given file in csv format'''
 def scrape_evolutions(file_name, start_id, end_id):
