@@ -1,0 +1,127 @@
+html {
+	height: 100%;
+    background-image: url("https://www.goombastomp.com/wp-content/uploads/2016/02/Yellow-Pokemon-Wallpaper.jpg");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+body {
+
+}
+
+.centered {
+	margin: auto;
+    width: 50%;
+}
+
+.thick-border {
+	border: 3px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	height: 100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight:bold;
+  font-color: black;
+  font-size: 30px
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 0;
+  background-color: #ffffff;
+  height: 70%;
+  width: 70%;
+  font-weight: bold;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: black;
+  font-size: 24px;
+  padding: 16px 32px;
+}
+
+#rcorners1 {
+    border-radius: 15px 50px 30px;
+}
+#rcorners2 {
+    border-radius: 15px 50px 30px 5px;
+}
+#rcorners3 {
+    border-radius: 20px;
+}
+#rcorners4 {
+    border-radius: 10px;
+		margin-bottom: 2%;
+}
+
+.buttonResultPages {
+    background-color: #ff1c1dff;
+    color: white;
+    font-size: 24px;
+    border-radius: 3px;
+    border-color: black;
+    display: inline-block;
+    margin: 0.2%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+		border: 2px solid black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
