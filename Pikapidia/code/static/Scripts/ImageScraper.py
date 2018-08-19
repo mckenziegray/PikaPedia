@@ -13,7 +13,7 @@ import csv
 
 def read_cell(x, y):
     count = 0
-    with open('./static/Storage/PokeData.csv', 'r') as f:
+    with open('../Storage/PokeData.csv', 'r') as f:
         reader = csv.reader(f)
         for n in reader:
             if(n=="Name"):
@@ -31,7 +31,7 @@ def read_cell(x, y):
                         words = []
                         words.append(tup)
                     URL = str("https://sprites.pokecheck.org/i/"+str(tup)+".gif")
-                    Image = str("./static/images/"+str(n[x])+".jpg")
+                    Image = str("../images/"+str(n[x])+".jpg")
                     print(URL, Image)
                     if(count!=0):
                         urllib.request.urlretrieve(URL, Image)

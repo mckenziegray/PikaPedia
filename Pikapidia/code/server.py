@@ -16,30 +16,24 @@ from indexer import *
 
 app = Flask(__name__)
 
-@app.route("/testpage")
-def birthdays():
-    print("TestPage Triggered")
-    dates = {"bulbasaur": 1, "ivysaur": 2, "venusaur": 3, "charmander": 4, "charmeleon": 5, "charizard": 6, "squirtle": 7, "wartortle": 8, "blastoise": 9}
-    x = int(100)
-    return render_template("testpage.html", dates=dates, x=x)
-
-
+#Loads Single Page for individule pokemon
+#
 @app.route('/SinglePokemonLoadPage', methods=['GET', 'POST', 'pokemonInfo', 'query'])
 def SinglePokemonLoadPage():
     if request.method == 'POST':
         data = request.form
     else:
         data = request.args
-
-    print("Single Page Triggered")
-
+	
+	#String passed into funciton form Homepage
     info = data.get('pokemonInfo')
 
-    print(info.replace("'", '"'))
+	
     lengthInfo = len(info)
 
     info = json.loads(info.replace("'", '"'))
 
+	#Stores variables that will later be passed into the page
     name = info['name']
     id = info['id']
     idInt = int(id)
@@ -53,10 +47,6 @@ def SinglePokemonLoadPage():
     third_forms = info['third_forms']
     pokemonEvo2Length = len(second_forms)
     pokemonEvo3Length = len(third_forms)
-
-    print()
-    print(third_forms)
-    print()
 
     return render_template('SinglePokemonLoadPage.html',
     #Variables for web page
@@ -84,6 +74,8 @@ def SinglePokemonLoadPage():
         pokemonEvo2Length=pokemonEvo2Length,
         pokemonEvo3Length=pokemonEvo3Length)
 
+#Loads Search Page for pokemon
+#		
 @app.route('/', methods=['GET', 'POST'])
 def PikaPediaHomepage():
     if request.method == 'POST':
@@ -91,8 +83,7 @@ def PikaPediaHomepage():
     else:
         data = request.args
 
-    print("Homepage Triggered")
-
+	#Pages functionality
     page_num = data.get("page_num")
     if page_num is None:
         page_num = 1
@@ -100,16 +91,12 @@ def PikaPediaHomepage():
     else:
         page_num = int(page_num)
         query = data.get("query") # If we're moving to a new page of results, use the same query
-
-    print(query)
-    print("\n")
-
-    print("Going to page " + str(page_num))
-
+	
+	#Search done here
     search_results_tuple = search("index_dir", str(query), page_num)
     search_results = search_results_tuple[0]
     lengthList = len(search_results)
-    print("Total results: " + str(search_results_tuple[1]))
+    #print("Total results: " + str(search_results_tuple[1]))
 
     return render_template(
         'PikaPediaHomepage.html',
@@ -120,6 +107,7 @@ def PikaPediaHomepage():
         total_results=search_results_tuple[1]
     )
 
+#lets you make changes and view in browser.
 #Found at URL: http://flask.pocoo.org/snippets/40/
 @app.context_processor
 def override_url_for():
