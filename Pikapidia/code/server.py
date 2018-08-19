@@ -11,7 +11,7 @@ from whoosh.fields import *
 from whoosh.qparser import QueryParser
 from whoosh.qparser import MultifieldParser
 
-sys.path.append("../../../..") # Any imports below this will come from the PikaPedia directory
+sys.path.append("./") # Any imports below this will come from the PikaPedia directory
 from indexer import *
 
 app = Flask(__name__)

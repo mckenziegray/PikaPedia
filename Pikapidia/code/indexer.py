@@ -139,7 +139,7 @@ def index(pokemon_db, evolutions_db, index_dir):
 
 def main():
     index_dir = "index_dir"
-    indexer = index("PokeData.csv", "EvolutionChains.csv", index_dir)
+    indexer = index("./static/Storage/PokeData.csv", "./static/Storage/EvolutionChains.csv", index_dir)
 
     # Makeshift search interface for testing
     while (True):
