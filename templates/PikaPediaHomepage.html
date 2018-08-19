@@ -1,12 +1,12 @@
 <!doctype html>
 
 <title>PikaPedia</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/pikapediahomepage.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/Search.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/homepage.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/search.css') }}">
 <input type="hidden" name="query" value="{{query}}">
 <div class="button_box2">
-	<form class="form-wrapper-2 cf"  action="{{ url_for('PikaPediaHomepage') }}" method="post">
-		<input  name="IndexSearch" type="text" placeholder="Search here..." required>
+	<form class="form-wrapper-2 cf"  action="{{ url_for('PikaPediaHomepage') }}" method="get">
+		<input  name="search_input" type="text" placeholder="Search..." required>
 		<button type="submit">Search</button>
 	</form>
 </div>
@@ -52,6 +52,7 @@
 	{% endfor %}
 </table>
 <table>
+	<!--Buttons for different pages of results-->
 	{% for i in range(1, (total_results/15)|round(0, 'ceil')|int + 1) %}
 		<tr>
 			<form action="{{ url_for('PikaPediaHomepage') }}" method="get">

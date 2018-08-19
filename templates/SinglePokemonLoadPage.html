@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/singlepage.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/Search.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/search.css') }}">
 <head>
 <title>{{ name|capitalize }}</title>
 </head>
 <!-- search form 6 -->
 <div class="button_box2">
-	<form class="form-wrapper-2 cf"  action="{{ url_for('PikaPediaHomepage') }}" method="post">
-		<input name="IndexSearch" type="text" placeholder="Search here..." required>
+	<form class="form-wrapper-2 cf"  action="{{ url_for('PikaPediaHomepage') }}" method="get">
+		<input name="search_input" type="text" placeholder="Search here..." required>
 		<button type="submit">Search</button>
 	</form>
 </div>
@@ -25,7 +25,7 @@
 				<div class="column" style="background-color:yellow; float: left;" id="rcorners1">
 					<div class="scrollBox">
 					<!--  logic will check to see if under first 5 generations or not-->
-					{% if idInt < 650 %}
+					{% if id < 650 %}
 					<!--  Images Scraped From URL: sprites.pokecheck.org/-->
 						<img src="./static/images/{{name}}.jpg"  alt="{{name}}" class="cardMainPokemon" id="rcorners1" 
 						onerror="this.src='./static/images/missingno.jpg'">
@@ -36,7 +36,7 @@
 						<div style="background-color: blue;" id="rcorners3" class = "card">
 							<h2 style=" font: verdana; font-size: 30px">Moves</h2>
 							<div>
-								{% for move in moveList %}
+								{% for move in moves %}
 									<p class="movesList" style="background-color: white;" id="rcorners4">
 										{{ move|capitalize }}
 									</p>
