@@ -20,30 +20,34 @@ def scrape_pokemon(file_name, start_id, end_id):
 			Stats = []    #this will record stats
 			Types = [] 	#this will record Types
 			Abilities = []	#this will record abilities
-			HiddenAbility = None
+			HiddenAbility = None      #returns HiddenAbility
 			Moves = [] #records the pokemon's moves
 			Name = json_data['name'] #this will return name
 			BaseExperience = json_data['base_experience']     #returns experience gained for defeating this
-			Height = json_data['height']
-			Weight = json_data['weight']
+			Height = json_data['height']     #returns height
+			Weight = json_data['weight']     #returns weight
 
-			test_list = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),)
+			test_list = (str(pokemon_id),str(Name),str(BaseExperience),str(Height),str(Weight),) #will concattinate over time to create a row to import look for
 
+			#Hidden Ability
 			for num in range(len(json_data['abilities'])):
 				if json_data['abilities'][num]['is_hidden']:
 					HiddenAbility = json_data['abilities'][num]['ability']['name']
 				else:
 					Abilities.append(str(json_data['abilities'][num]['ability']['name']))
-
+			
+			#Types
 			for num in range(len(json_data['types'])):
 				Types.append(str(json_data['types'][num]['type']['name']))
 
 			for i in range(6):
 				Stats.append(json_data['stats'][i]['base_stat'])
-			
+
+			#Stats	
 			for x in range(len(json_data['moves'])):
 				Moves.append(str(json_data['moves'][x]['move']['name']))
 
+				
 			#Types to added to test_list here. I used 2 because this is most possible
 			for num in range(len(Types)):
 				test_list = test_list + (str(Types[num]),)
@@ -56,7 +60,8 @@ def scrape_pokemon(file_name, start_id, end_id):
 			for num in range(2-len(Abilities)):
 				test_list = test_list + (("None"),)
 			
-			test_list += ((str(HiddenAbility)),)
+			#Add hidenability
+			test_list += ((str(HiddenAbility)),) 
 				
 			stat_list = []
 		

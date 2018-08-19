@@ -1,7 +1,6 @@
 import time
 import urllib.request
 
-
 #Images Scraped From URL: sprites.pokecheck.org
 #
 #   Example:
@@ -10,7 +9,7 @@ import urllib.request
 #
 
 import csv
-
+'''Will open current csv and read the name so we can name the pictures the correct name'''
 def read_cell(x, y):
     count = 0
     with open('../Storage/PokeData.csv', 'r') as f:
